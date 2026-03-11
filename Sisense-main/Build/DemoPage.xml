@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Demo Page" parallel="false" thread-count="1" verbose="10">
+
+	<listeners>
+		<listener class-name="com.kfast.reports.CustomReporterBuildSummary" />
+		<listener class-name="com.kfast.reports.CustomReporter" />
+		<listener class-name="com.kfast.reports.ExtentReportListener" />
+		<listener class-name="com.kfast.listeners.AnnotationTransformer" />
+	</listeners>
+
+	<!-- change this value to 'local' if email should be triggered from local-->
+	<parameter name="env" value="jenkins" />
+
+	<test name="Sisense Demo Page Testing">
+		<classes>
+
+			<class name="com.sisense.header.DemoTest">
+				<methods>
+					<include name="verifyHomeBreadcrumbTitle" /> 
+					<include name="verifyScheduleaDemo" />
+					<include name="verifyBookaLiveDemoPageTitleUnderFooterSection" />
+					<!-- <include name="verifyScheduleADemoFormOpen" />
+					<include name="verifyScheduleADemoFunctionality" />
+					<include name="verifyWatchDemoFormOpen" />
+					<include name="verifyWatchDemoFunctionality" />
+					<include name="verifyContactUsPageTitle" /> -->
+					
+				</methods>
+			</class>
+
+		</classes>
+	</test>
+</suite>

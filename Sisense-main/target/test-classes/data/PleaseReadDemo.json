@@ -1,0 +1,14 @@
+{
+	"testTC01": {
+		"//": "Here if you want to fetch data from Json file then you need Create Json file with your class",
+		"//": "and create Json Object with your TestNG Method Name and In Method Name you need to pass parameter",
+		"//": "Map<String,String> testData and use testData.get('adminUsername'); to get value from Json Key",
+		"companyCodeMiddleEastUAT": "ADAHUAT",
+		"employeeCodeMiddleEastUAT": "Admin",
+		"passwordMiddleEastUAT": "Test@1234"
+	},
+	"testTC02": {
+		"username": "standard_user",
+		"password": "secret_sauce"
+	}
+}

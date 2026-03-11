@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="About Pages" parallel="false" thread-count="1" verbose="10">
+
+	<listeners>
+		<listener class-name="com.kfast.reports.CustomReporterBuildSummary" />
+		<listener class-name="com.kfast.reports.CustomReporter" />
+		<listener class-name="com.kfast.reports.ExtentReportListener" />
+		<listener class-name="com.kfast.listeners.AnnotationTransformer" />
+	</listeners>
+
+	<!-- change this value to 'local' if email should be triggered from local-->
+	<parameter name="env" value="jenkins" />
+
+	<test name="Sisense Testing">
+		<classes>
+
+			<class name="com.sisense.about.AboutTest">
+				<methods>
+
+					<include name="verifyHomeBreadcrumbTitleUnderAboutPage" />
+					<include
+						name="verifyExploreCareersAtSisensePageTitleUnderOurCultureAndCareersSection" />
+					<include
+						name="verifyAboutOurInvestorsPageTitleUnderOurInvestorsSection" />
+					<include name="verifyDemoPageTitleUnderHeaderSection" />
+					<include
+						name="verifyBookaliveDemoPageTitleUnderFooterSection" />
+				</methods>
+			</class>
+
+
+			<class name="com.sisense.about.CompanyTest">
+				<methods>
+					<include name="verifyCompanyPageTitleUnderAboutTab" />
+
+					<include name="verifyHomeBreadcrumbTitleUnderCompanyPage" />
+					<include
+						name="verifyExplorecareersatSisensePageTitleUnderOurCultureAndCareersSection" />
+					<include
+						name="verifyAboutOurInvestorsLinkPageTitleUnderOurInvestorsSection" />
+					<include name="verifyDemoPageTitleUnderHeaderSection" />
+					<include
+						name="verifyBookaliveDemoPageTitleUnderFooterSection" />
+				</methods>
+			</class>
+
+			<class name="com.sisense.about.PartnersTest">
+				<methods>
+					<include name="verifyPartnersPageTitleUnderAboutTab" />
+					<include name="verifyHomeBreadcrumbTitleUnderPartnersPage" />
+
+					<include name="verifyFillFormBecomeaPartnerFunctionality" />
+					<include
+						name="verifyViewAllPartnersPageTitleUnderBannerSection" />
+					<include name="verifyFillFormFunctionality" />
+					<include name="verifyPrivacyPolicyPageTitleUnderFormSection" />
+					<include
+						name="verifyTermsOfServicePageTitleUnderFormSection" />
+					<include name="verifyDemoPageTitleUnderHeaderSection" />
+					<include
+						name="verifyBookaliveDemoPageTitleUnderFooterSection" />
+				</methods>
+			</class>
+
+
+			<class name="com.sisense.about.NewsroomTest">
+				<methods>
+					<include name="verifyNewsroomPageTitleUnderAboutTab" />
+
+					<include name="verifyHomeBreadcrumbTitleUnderNewsroomPage" />
+					<include name="verifyFillFormFunctionality" />
+					<include name="verifyPrivacyPolicyPageTitleUnderForm" />
+					<include name="verifyTermsOfServicePageTitleUnderAboutTab" />
+					<include name="verifyDemoPageTitleUnderHeaderSection" />
+					<include
+						name="verifyBookaliveDemoPageTitleUnderFooterSection" />
+					<include
+						name="verifyPressReleasesPageTitleUnderNewsroomPage" />
+
+					<include
+						name="verifyPressReleasesHomeBreadcrumbTitleUnderPressReleasesPage" />
+					<include name="verifyPressReleasesFillFormFunctionality" />
+					<include
+						name="verifyPressReleasesPrivacyPolicyPageTitleUnderFormSection" />
+					<include
+						name="verifyPressReleasesTermsOfServicePageTitleUnderFormSection" />
+					<include
+						name="verifyPressReleasesDemoPageTitleUnderHeaderSection" />
+					<include
+						name="verifyPressReleasesBookaliveDemoPageTitleUnderFooterSection" />
+				</methods>
+			</class>
+
+
+		</classes>
+	</test>
+</suite>

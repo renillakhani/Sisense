@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Developers Pages" parallel="false" thread-count="1" verbose="10">
+
+	<listeners>
+		<listener class-name="com.kfast.reports.CustomReporterBuildSummary" />
+		<listener class-name="com.kfast.reports.CustomReporter" />
+		<listener class-name="com.kfast.reports.ExtentReportListener" />
+		<listener class-name="com.kfast.listeners.AnnotationTransformer" />
+	</listeners>
+
+	<!-- change this value to 'local' if email should be triggered from local-->
+	<parameter name="env" value="jenkins" />
+
+	<test name="Sisense Developers Page Testing">
+		<classes>
+
+
+			<class name="com.sisense.developers.DevelopersTest">
+				<methods>
+					<include name="verifyHomeBreadcrumbTitleUnderDevelopersPage" />
+					<include name="verifyDemoPageTitleUnderHeaderSection" />
+					<include
+						name="verifyWatchADemoPageTitleUnderChooseTheEmbeddedSection" />
+					<include
+						name="verifyBookaliveDemoPageTitleUnderFooterSection" />
+				</methods>
+			</class>
+
+			<class name="com.sisense.developers.DocumentationTest">
+				<methods>
+					<include
+						name="verifyDocumentationPageTitleUnderDevelopersTab" />
+					<include name="verifyBlogPageTitleUnderHeaderSection" />
+					<include name="verifyMarketplacePageTitleUnderHeaderSection" />
+					<include
+						name="verifyDeveloperDocsTapsPageTitleUnderHeaderSection" />
+					<include
+						name="verifyGettingStartedPageTitleUnderDocumentationPage" />
+					<include
+						name="verifyReleaseNotesPageTitleUnderDocumentationPage" />
+					<include
+						name="verifySecurityPageTitleUnderDocumentationPage" />
+					<include
+						name="verifyDeploymentPageTitleUnderDocumentationPage" />
+					<include
+						name="verifyAdministrationPageTitleUnderDocumentationPage" />
+					<include
+						name="verifyGitIntegrationPageTitleUnderDocumentationPage" />
+					<include
+						name="verifyDataSourcesPageTitleUnderDocumentationPage" />
+					<include
+						name="verifyModelingDataPageTitleUnderDocumentationPage" />
+					<include
+						name="verifyDashboardsPageTitleUnderDocumentationPage" />
+					<include
+						name="verifySisenseIntelligencePageTitleUnderDocumentationPage" />
+					<include
+						name="verifyEmbedAndInfuseAnalyticsPageTitleUnderDocumentationPage" />
+					<include
+						name="verifyCloudManagedServicesPageTitleUnderDocumentationPage" />
+					<include
+						name="verifyNotebooksPageTitleUnderDocumentationPage" />
+					<include
+						name="verifyTroubleshootingPageTitleUnderDocumentationPage" />
+					<include
+						name="verifyDeveloperDocsPageTitleUnderDocumentationPage" />
+
+					<include
+						name="verifyJoinTheCommunityLinkPageTitleUnderDocumentationPage" />
+					<include
+						name="verifyGoToSupportPortalPageTitleUnderDocumentationPage" />
+					<include
+						name="verifyExploreTheAcademyLinkPageTitleUnderDocumentationPage" />
+					<include
+						name="verifyBookaliveDemoPageTitleUnderDocumentationPage" />
+				</methods>
+			</class>
+
+			<class name="com.sisense.developers.PlaygroundTest">
+				<methods>
+					<include name="verifyPlaygroundPageTitleUnderDevelopersTab" />
+
+					<include
+						name="verifyDocumentationQuickstartsAndGuidesPageTitleUnderPlaygroundPage" />
+
+					<include
+						name="verifyQueriesAndDataVisualizationsLinkUnderPlaygroundPage" />
+					<include
+						name="verifyEmbedExistingDashboardsLinkUnderPlaygroundPage" />
+					<include
+						name="verifyCollaborativeApproachLinkUnderPlaygroundPage" />
+					<include
+						name="verifyDeveloperForumLinkUnderPlaygroundPage" />
+					<include name="verifyDemoPageTitleUnderHeaderSection" />
+					<include
+						name="verifyBookaliveDemoPageTitleUnderFooterSection" />
+				</methods>
+			</class>
+			<class name="com.sisense.developers.GitIntegrationTest">
+				<methods>
+					<include
+						name="verifyGitIntegrationPageTitleUnderDevelopersTab" />
+					<include
+						name="verifybookaliveDemoPageTitleUnderBannerSection" />
+					<include
+						name="verifySeamlesssourcecontrolTitleUnderGitIntegrationPage" />
+					<include
+						name="verifyVersioncontrolledanalyticsPageTitleUnderGitIntegrationPage" />
+					<include
+						name="verifyWatchnowPageTitleUnderVersionControlledAnalyticsSection" />
+					<include
+						name="verifyFluidCICDProcessesPageTitleUnderGitIntegrationSection" />
+					<include
+						name="verifyLearnmorePageTitleUnderFluidCICDProcessesSection" />
+					<include
+						name="verifyGeta30dayfreetrialPageTitleUnderBuildBetterAndFasterSection" />
+					<include
+						name="verifyHomeBreadcrumbTitleUnderGitIntegrationPage" />
+					<include
+						name="verifyDeveloperPortalBreadcrumbTitleUnderGitIntegrationPage" />
+					<include name="verifyDemoPageTitleUnderHeaderSection" />
+					<include
+						name="verifyBookaliveDemoPageTitleUnderFooterSection" />
+				</methods>
+			</class>
+			
+			<class name="com.sisense.developers.GithubTest">
+				<methods>
+					<include name="verifyGithubPageTitleUnderdevelopersTab" />
+				</methods>
+			</class>
+
+		</classes>
+	</test>
+</suite>

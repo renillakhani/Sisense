@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Solutions Pages" parallel="false" thread-count="1" verbose="10">
+
+	<listeners>
+		<listener class-name="com.kfast.reports.CustomReporterBuildSummary" />
+		<listener class-name="com.kfast.reports.CustomReporter" />
+		<listener class-name="com.kfast.reports.ExtentReportListener" />
+		<listener class-name="com.kfast.listeners.AnnotationTransformer" />
+	</listeners>
+
+	<!-- change this value to 'local' if email should be triggered from local-->
+	<parameter name="env" value="jenkins" />
+
+	<test name="Sisense Solutions Page Testing">
+		<classes>
+
+
+			<class name="com.sisense.solutions.SolutionsTest">
+				<methods>
+					<include name="verifyHomeBreadcrumbTitleUnderSolutionsTab" />
+					<include
+						name="verifyRequestADemoPageTitleUnderBannerSection" />
+					<include name="verifyPrivacyPolicyPageTitleUnderForm" />
+					<include name="verifyTermsOfServicePageTitleUnderForm" />
+					<include name="verifyFillFormFunctionality" />
+					<include name="verifyDemoPageTitleUnderHeaderSection" />
+					<include
+						name="verifyBookaliveDemoPageTitleUnderFooterSection" />
+				</methods>
+			</class>
+
+			<class name="com.sisense.solutions.InsightstoActionTest">
+				<methods>
+					<include
+						name="verifyInsightstoActionPageTitleUnderSolutionTab" />
+					<include
+						name="verifyTakeTheSisenseTestDrivePageTitleUnderBannerSection" />
+					<include
+						name="verifyLearnMorePageTitleUnderConnectAllDataSection" />
+					<include
+						name="verifysecondLearnMorePageTitleUnderEliminateBarriersSection" />
+					<include
+						name="verifyThirdLearnMorePageTitleUnderAIExplorationSection" />
+					<include
+						name="verifyTryFreePageTitleUnderStartYourFreeTrialSection" />
+					<include
+						name="verifyHomeBreadcrumbTitleUnderInsightsToActionPage" />
+					<include
+						name="verifySolutionsBreadcrumbTitleUnderInsightsToActionPage" />
+					<include name="verifyDemoPageTitleUnderHeaderSection" />
+					<include
+						name="verifyBookaliveDemoPageTitleUnderFooterSection" />
+				</methods>
+			</class>
+			<class name="com.sisense.solutions.BuildYourWayTest">
+				<methods>
+					<include name="verifyBuildYourWayPageTitleUnderSolutionsTab" />
+					<include
+						name="verifyHomeBreadcrumbTitleUnderBuildYourWayPage" />
+					<include
+						name="verifySolutionsBreadcrumbTitleUnderBuildYourWayPage" />
+					<include
+						name="verifyTakeTheSisenseTestDrivePageTitleUnderBannerSection" />
+					<include
+						name="verifyLearnMorePageTitleUnderCustomizeAnalyticsEffortlesslySection" />
+					<include
+						name="verifyCheckOutThePlaygroundPageTitleUnderBuiltInAnalyticsSection" />
+					<include
+						name="verifyWatchADemoPageTitleUnderAIExperiencesSection" />
+					<include
+						name="verifyTryFreePageTitleUnderStartYourFreeTrialSection" />
+					<include name="verifyDemoPageTitleUnderHeaderSection" />
+					<include
+						name="verifyBookaliveDemoPageTitleUnderFooterSection" />
+				</methods>
+			</class>
+			<class name="com.sisense.solutions.AnalyticsforEveryoneTest">
+				<methods>
+					<include
+						name="verifyAnalyticsforEveryonePageTitleUnderSolutionTab" />
+					<include
+						name="verifyHomeBreadcrumbTitleUnderAnalyticsForEveryonePage" />
+					<include
+						name="verifySolutionBreadcrumbTitleUnderAnalyticsForEveryonePage" />
+					<include
+						name="verifyTakeTheSisenseTestDrivePageTitleUnderBannerSection" />
+					<include
+						name="verifyWatchaDemoPageTitleUnderEnableTrulySelfServiceAnalyticsSection" />
+					<include
+						name="verifyLearnMorePageTitleUnderProvideActionableInsightsSection" />
+					<include
+						name="verifysecondLearnMorePageTitleUnderBoostEngagementSection" />
+					<include
+						name="verifyTryFreePageTitleUnderStartYourFreeTrialSection" />
+					<include name="verifyDemoPageTitleUnderHeaderSection" />
+					<include
+						name="verifyBookaliveDemoPageTitleUnderFooterSection" />
+				</methods>
+			</class>
+
+
+			<class name="com.sisense.solutions.FinancialservicesTest">
+				<methods>
+					<include
+						name="verifyFinancialservicesPageTitleUnderSolutionsTab" />
+
+					<include
+						name="verifyHomeBreadcrumbTitleUnderSolutionsPage" />
+					<include
+						name="verifySolutionBreadcrumbTitleUnderSolutionsPage" />
+					<include
+						name="verifyReadcustomerstoriesPageTitleUnderHeaderSection" />
+					<include
+						name="verifyLearnMorePageTitleUnderRevolutionizeFinancialAnalyticsSection" />
+					<include
+						name="verifyScheduleademoPageTitleUnderReduceFinancialSection" />
+					<include
+						name="verifyTryFreePageTitleUnderStartYourFreeTrialSection" />
+					<include name="verifyDemoPageTitleUnderHeaderSection" />
+					<include
+						name="verifyBookaliveDemoPageTitleUnderFooterSection" />
+				</methods>
+			</class>
+
+			<class name="com.sisense.solutions.HealthcareAndPharmaTest">
+				<methods>
+					<include
+						name="verifyHealthcareAndPharmaTestPageTitleUnderSolutionsTab" />
+					<include
+						name="verifyHomeBreadcrumbTitleUnderHealthcareAndPharmPage" />
+					<include
+						name="verifySolutionBreadcrumbTitleUnderHealthcareAndPharmPage" />
+					<include
+						name="verifyReadcustomerstoriesPageTitleUnderHeaderSection" />
+					<include
+						name="verifyLearnMorePageTitleUnderTheFastestPathSection" />
+					<include
+						name="verifyFirstScheduleADemoPageTitleUnderContextualAnalyticsSection" />
+					<include
+						name="verifySecondScheduleADemoPageTitleUnderSecurelyTTransformPatientSection" />
+					<include name="verifyWatchNowPageTitleUnderMytonomySection" />
+					<include
+						name="verifyTryFreePageTitleUnderStartYourFreeTrialSection" />
+					<include name="verifyDemoPageTitleUnderHeaderSection" />
+					<include
+						name="verifyBookaliveDemoPageTitleUnderFooterSection" />
+				</methods>
+			</class>
+
+			<class name="com.sisense.solutions.SupplyChainTest">
+				<methods>
+					<include name="verifySupplyChainPageTitleUnderSolutionsTab" />
+					<include
+						name="verifyComposableDevelopmentTechnologyPageTitleUnderBuildSupplyChainAnalyticsSection" />
+					<include
+						name="verifyHomeBreadcrumbTitleUnderSupplyChainPage" />
+					<include
+						name="verifySolutionBreadcrumbTitleUnderSupplyChainPage" />
+					<include
+						name="verifyReadcustomerstoriesPageTitleUnderBannerSection" />
+					<include
+						name="verifyLearnMorePageTitleUnderTransformSupplyChainAnalyticsSection" />
+					<include
+						name="verifyScheduleADemoPageTitleUnderIntegrateAllDataSection" />
+					<include
+						name="verifyTryFreePageTitleUnderStartYourFreeTrialSection" />
+					<include name="verifyDemoPageTitleUnderHeaderSection" />
+					<include
+						name="verifyBookaliveDemoPageTitleUnderFooterSection" />
+				</methods>
+			</class>
+			<class name="com.sisense.solutions.TechnologyTest">
+				<methods>
+					<include
+						name="verifyTechnologyPageTitleUnderSolutionsTab" />
+					<include
+						name="verifyHomeBreadcrumbTitleUnderTechnologPage" />
+					<include
+						name="verifySolutionBreadcrumbTitleUnderTechnologPage" />
+					<include
+						name="verifyReadcustomerstoriesPageTitleUnderBannerSection" />
+					<include
+						name="verifyLearnMorePageTitleUnderDelightYourCustomersSection" />
+					<include
+						name="verifyScheduleademoPageTitleUnderEngageYourEndUsersSection" />
+					<include
+						name="verifyTryFreePageTitleUnderStartYourFreeTrialSection" />
+					<include
+						name="verifyDemoPageTitleUnderHeaderSection" />
+					<include
+						name="verifyBookaliveDemoPageTitleUnderFooterSection" />
+					<include
+						name="verifyComposableDevelopmentPageTitleUnderEngageYourEndUsersSection" />
+				</methods>
+			</class>
+
+			<class name="com.sisense.solutions.ManufacturingTest">
+				<methods>
+					<include
+						name="verifyManufacturingPageTitleUnderSolutionsTab" />
+					<include
+						name="verifyHomeBreadcrumbTitleUnderManufacturingPage" />
+					<include
+						name="verifySolutionBreadcrumbTitleUnderManufacturingPage" />
+					<include
+						name="verifyReadcustomerstoriesPageTitleUnderBannerSection" />
+					<include
+						name="verifyLearnMorePageTitlUnderAPIPlatformSectione" />
+					<include
+						name="verifyScheduleademoPageTitleUnderProductionSection" />
+					<include
+						name="verifyTryFreePageTitleUnderStartYourFreeTrialSection" />
+					<include name="verifyDemoPageTitleUnderHeaderSection" />
+					<include
+						name="verifyBookaliveDemoPageTitleUnderFooterSection" />
+					<include
+						name="verifyComposableDevelopmentTechnologyPageTitleUnderFastestWayToDeliverSection" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

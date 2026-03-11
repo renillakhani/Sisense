@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Test Suite" verbose="10">
+
+	<listeners>
+		<listener class-name="com.kfast.reports.CustomReporterBuildSummary" />
+		<listener class-name="com.kfast.reports.CustomReporterForAPI" />
+		<listener class-name="com.kfast.reports.ExtentReportListener" />
+		<listener class-name="com.kfast.listeners.AnnotationTransformer" />
+	</listeners>
+
+	<!-- change this value to 'local' if email should be triggered from local-->
+	<parameter name="env" value="jenkins" />
+
+	<test name="Create User API Test">
+		<classes>
+			<class name="com.kfast.tests.NewUserTests">
+				<methods>
+					<include name="testPostUser" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get User API Test">
+		<classes>
+			<class name="com.kfast.tests.NewUserTests">
+				<methods>
+					<include name="testGetUserByName" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Update User API Test">
+		<classes>
+			<class name="com.kfast.tests.NewUserTests">
+				<methods>
+					<include name="testUpdateUserByName" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Delete User API Test">
+		<classes>
+			<class name="com.kfast.tests.NewUserTests">
+				<methods>
+					<include name="testDeleteUserByName" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Create User API Test usign Excel">
+		<classes>
+			<class name="com.kfast.tests.NewUserTests">
+				<methods>
+					<include name="testPostUserUsingExcel" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Get Users List API Test">
+		<classes>
+			<class name="com.kfast.tests.NewUserTests">
+				<methods>
+					<include name="testGetListUsers" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+</suite>

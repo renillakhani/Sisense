@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Footer Pages" parallel="false" thread-count="1" verbose="10">
+
+	<listeners>
+		<listener class-name="com.kfast.reports.CustomReporterBuildSummary" />
+		<listener class-name="com.kfast.reports.CustomReporter" />
+		<listener class-name="com.kfast.reports.ExtentReportListener" />
+		<listener class-name="com.kfast.listeners.AnnotationTransformer" />
+	</listeners>
+
+	<!-- change this value to 'local' if email should be triggered from local-->
+	<parameter name="env" value="jenkins" />
+
+	<test name="Sisense Testing">
+		<classes>
+
+
+			<class name="com.sisense.footer.SisenseFooterTest">
+				<methods>
+
+					<include name="verifyCloudPageTitleUnderFooter" />
+					<include name="verifyComposePageTitleUnderFooter" />
+<!--					<include name="verifyEmbeddablePageTitleUnderFooter" />-->
+<!--					<include name="verifyConnectivityPageTitleUnderFooter" />-->
+<!--					<include name="verifyDataModelingPageTitleUnderFooter" />-->
+<!--					<include-->
+<!--						name="verifySisenseIntelligencePageTitleUnderFooter" />-->
+<!--					<include-->
+<!--						name="verifyTrustAndSecurityPageTitleUnderFooterPlatformSection" />-->
+
+<!--					<include name="verifyAboutTitleUnderFooter" />-->
+<!--					<include name="verifyCustomerStoriesTitleUnderFooter" />-->
+<!--					<include name="verifyPricingPageTitleUnderFooter" />-->
+<!--					<include name="verifyNewsroomPageTitleUnderFooter" />-->
+<!--					<include name="verifyCareersPageTitleUnderFooter" />-->
+<!--					<include name="verifyTrustAndSecurityPageTitleUnderFooter" />-->
+<!--					<include name="verifyAwardsTitleUnderFooter" />-->
+<!--					<include name="verifyContactUsPageTitleUnderFooter" />-->
+<!--					<include name="verifySupportPortalPageTitleUnderFooter" />-->
+<!--					<include name="verifyDocumentationPageTitleUnderFooter" />-->
+<!--					<include name="verifyPartnerResourcesPageTitleUnderFooter" />-->
+<!--					<include name="verifyBlogPageTitleUnderFooter" />-->
+<!--					<include name="verifyMarketPlacePageTitleUnderFooter" />-->
+<!--					<include name="verifySisenseAcademyPageTitleUnderFooter" />-->
+<!--					<include name="verifyCommunityPageTitleUnderFooter" />-->
+<!--					<include name="verifyDeveloperPortalPageTitleUnderFooter" />-->
+<!--					<include name="verifyBrandPortalPageTitleUnderFooter" />-->
+<!--					<include name="verifyPrivacyPolicyPageTitleUnderFooter" />-->
+<!--					<include name="verifyLegalPageTitleUnderFooter" />-->
+<!--					<include name="verifyCookiePreferencesPopUpUnderFooter" />-->
+<!--					<include-->
+<!--						name="verifySuccessfullyTextAfterClickSubmitPreferencesButton" />-->
+<!--					<include-->
+<!--						name="verifySuccessfullyTextAfterClickAcceptAllButton" />-->
+<!--					<include-->
+<!--						name="verifySuccessfullyTextAfterClickDeclineAllButton" />-->
+<!--					<include name="verifyBookaliveDemoPageTitleUnderFooter" />-->
+<!--					<include name="verifyTwitterPageTitleUnderFooter" />-->
+<!--					<include name="verifyLinkedinPageTitleUnderFooter" />-->
+<!--					<include name="verifyGithubPageTitleUnderFooter" />-->
+<!--					<include name="verifyPrivacyPolicyPageTitleUnderSocialMedia" />-->
+<!--					<include-->
+<!--						name="verifysocialMediaLegalPageTitleUnderSocialMedia" />-->
+				</methods>
+			</class>
+
+
+<!--			<class name="com.sisense.footer.BrandPortalTest">-->
+<!--				<methods>-->
+<!--					<include-->
+<!--						name="verifyHomeBreadcrumbTitleUnderBrandPortalPage" />-->
+<!--					<include-->
+<!--						name="verifyResourcehubBreadcrumbTitleUnderBrandPortalPage" />-->
+
+<!--					<include name="verifyDemoPageTitleUnderHeaderSection" />-->
+<!--					<include-->
+<!--						name="verifywebAimContrastCheckerPageTitleUnderSisenseTypographySection" />-->
+<!--					<include-->
+<!--						name="verifyBookaliveDemoPageTitleUnderFooterSection" />-->
+<!--					<include-->
+<!--						name="verifyfirstDownloadGoogleFontButtonPageTitleUnderPoppinsSection" />-->
+<!--					<include-->
+<!--						name="verifyDownloadGoogleFontButtonPageTitleUnderDMSansSection" />-->
+<!--					<include-->
+<!--						name="verifyDownloadButtonPageTitleUnderSisenseColorPaletteSection" />-->
+<!--					<include-->
+<!--						name="verifyLogoAssetsButtonPageTitleUnderWhatCanYouFindHereSection" />-->
+<!--					<include-->
+<!--						name="verifyColorsButtonPageTitleUnderWhatCanYouFindHereSection" />-->
+<!--					<include-->
+<!--						name="verifyTypographyButtonPageTitleUnderWhatCanYouFindHereSection" />-->
+<!--				</methods>-->
+<!--			</class>-->
+
+<!--			<class name="com.sisense.footer.CareersTest">-->
+<!--				<methods>-->
+<!--					<include name="verifyCareerPageTitleUnderFooter" />-->
+<!--					<include name="verifyHomeBreadcrumbTitleUnderCareersPage" />-->
+<!--					<include name="verifyAboutBreadcrumbTitleUnderCareersPage" />-->
+<!--					<include name="verifyViewallopenrolesPageTitleUnderHeader" />-->
+<!--					<include-->
+<!--						name="verifyGreatPlacetoWorkPageTitleUnderAwardsSection" />-->
+<!--					<include name="verifyComparablyPageTitleUnderAwardsSection" />-->
+<!--					<include name="verifyDepartmentFilter" />-->
+<!--					<include-->
+<!--						name="verifyCreateAlertPageTitleUnderCurrentOpeningsAtSisenseSection" />-->
+<!--					<include name="verifyDemoPageTitleUnderHeaderSection" />-->
+<!--					<include-->
+<!--						name="verifyBookaliveDemoPageTitleUnderFooterSection" />-->
+<!--				</methods>-->
+<!--			</class>-->
+
+
+		</classes>
+	</test>
+</suite>

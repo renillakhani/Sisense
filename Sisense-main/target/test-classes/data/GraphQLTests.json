@@ -1,0 +1,15 @@
+{
+	"getUsers_withPOJOTest": {
+		"query":"query ($limit: Int!) {\n  users(limit: $limit) {\n    id\n    name\n    todos {\n      id\n    }\n  }\n}\n",
+		"limit": "3"
+	},
+	"getUsers_withQueryVariables":{
+		"query":"query ($limit: Int!,$name:String!) {\n  users(limit: $limit, where: {name: {_eq: $name}}) {\n    id\n    name\n  }\n}\n",
+		"limit":"3",
+		"name":"dassad"
+	},
+	"getTodoswithLimitTest":{
+		"query":"query($limit:Int!){\n  todos(limit: $limit) {\n    title\n    user {\n      name\n    }\n  }\n}\n",
+		"limit":"5"
+	}
+}

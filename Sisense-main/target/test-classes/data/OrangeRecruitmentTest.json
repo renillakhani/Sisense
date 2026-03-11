@@ -1,0 +1,18 @@
+{
+	"recruitmentFlow": {
+		"adminUsername": "Admin",
+		"adminPassword": "admin123",
+		"firstName": "Kiwi_",
+		"lastName": "Test",
+		"uploadFile": "resume.docx",
+		"email": "testqa@gmail.com",
+		"vacancyName": "Java Developer",
+		"shortListNote": "Candidate shortlisted",
+		"interviewTitle": "Assistant Software Engineer",
+		"interviewDate": "2024-02-02",
+		"interviewNote": "Interview scheduled",
+		"resultNote": "Interview passed",
+		"jobOfferNote": "Offered job as Software enginner",
+		"hireNote": "hired as Software engineer"
+	}
+}

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Platform Pages" parallel="false" thread-count="1" verbose="10">
+
+	<listeners>
+		<listener class-name="com.kfast.reports.CustomReporterBuildSummary" />
+		<listener class-name="com.kfast.reports.CustomReporter" />
+		<listener class-name="com.kfast.reports.ExtentReportListener" />
+		<listener class-name="com.kfast.listeners.AnnotationTransformer" />
+	</listeners>
+
+	<!-- change this value to 'local' if email should be triggered from local-->
+	<parameter name="env" value="jenkins" />
+
+	<test name="Sisense Platform Testing">
+		<classes>
+
+
+			<class name="com.sisense.platform.PlatformTest">
+				<methods>
+					<include
+						name="verifyHomeBreadcrumbPageTitleUnderPlatformPage" />
+					<include name="verifyBookADemoPageTitleUnderBannerSection" />
+					<include name="verifyLearnMorePageTitleUnderAISection" />
+					<include
+						name="verifyLearnMorePageTitleUnderDataModelingSection" />
+					<include
+						name="verifyLearnMorePageTitleUnderDataConnectivitySection" />
+					<include
+						name="verifyLearnMorePageTitleUnderEmbeddingSection" />
+					<include
+						name="verifyLearnMorePageTitleUnderComposabilitySection" />
+					<include
+						name="verifyLearnMorePageTitleUnderSecureScalableSection" />
+					<include
+						name="verifyLearnMorePageTitleUnderCloudDeploymentSection" />
+					<include
+						name="verifyTryFreePageTitleUnderStartYourFreeTrialSection" />
+					<include name="verifyDemoPageTitleUnderHeaderSection" />
+					<include
+						name="verifyBookaLiveDemoPageTitleUnderFooterSection" />
+				</methods>
+			</class>
+
+			<class name="com.sisense.platform.CloudTest">
+				<methods>
+					<include name="verifyCloudPageTitleUnderPlatformSection" />
+					<include
+						name="verifyHomeBreadcrumbTitleUnderCloudPageSection" />
+					<include
+						name="verifyPlatformBreadcrumbTitleUnderCloudPageSection" />
+					<include
+						name="verifyBookaLiveDemoPageTitleUnderCloudPageSection" />
+					<include
+						name="verifyCheckOutOurReleaseNotesPageTitleUnderFeaturePrioritizationSection" />
+					<include
+						name="verifySeeOurSupportResourcesPageTitleUnderProactiveSupportSection" />
+					<include
+						name="verifyLearnMoreAboutSecurityAndTrustPageTitleUnderSecureEnvironmentSection" />
+					<include
+						name="verifyTryFreePageTitleUnderStartYourFreeTrialSection" />
+					<include name="verifyDemoPageTitleUnderHeaderSection" />
+					<include
+						name="verifyBookaLiveDemoPageTitleUnderFooterSection" />
+				</methods>
+			</class>
+
+			<class name="com.sisense.platform.ComposableTest">
+				<methods>
+					<include
+						name="verifyComposableSDKPageTitleUnderPlatformTab" />
+					<include
+						name="verifyHomeBreadcrumbTitleUnderComposablePage" />
+					<include
+						name="verifyPlatformBreadcrumbTitleUnderComposablePage" />
+					<include
+						name="verifyTryNowButtonPageTitleUnderComposeSDKBannerSection" />
+					<include
+						name="verifyBookALiveDemoButtonPageTitleUnderComposeSDKSection" />
+					<include
+						name="verifyDownloadSolutionBriefButtonPageTitleUnderSwiftCodeFirstAnalyticsSection" />
+					<include
+						name="verifySecondTryNowButtonPageTitleUnderTryItFreeFor30DaysSection" />
+					<include
+						name="verifyExplorePlaygroundButtonPageTitleUnderByDevelopersSection" />
+					<include
+						name="verifyLearnMoreButtonPageTitleUnderPoweredByFusionSection" />
+					<include
+						name="verifyTryFreePageTitleUnderStartYourFreeTrialSection" />
+					<include
+						name="verifyDemoButtonPageTitleUnderHeaderSection" />
+					<include
+						name="verifyBookALiveDemoButtonPageTitleUnderFooterSection" />
+				</methods>
+			</class>
+
+			<class name="com.sisense.platform.EmbeddableTest">
+				<methods>
+					<include name="verifyEmbeddablePageTitleUnderPlatformTab" />
+					<include
+						name="verifyBookALiveDemoFormOpenTitleUnderEmbeddablePage" />
+					<include name="verifyFillTheFormUnderBookaLiveDemo" />
+					<include
+						name="verifyCheckOutTheQuickstartGuidePageTitleUnderNativelyEmbedSection" />
+					<include
+						name="verifyReadOurGuidePageTitleUnderQuicklyIntegrateSection" />
+					<include
+						name="verifyGetStartedPageTitleUnderChooseWhatToEmbedSection" />
+					<include
+						name="verifyEmbeddingWithIFramePageTitleUnderEmbedInAFewClicksSection" />
+					<include
+						name="verifyTryFreePageTitleUnderStartYourFreeTrialSection" />
+					<include name="verifyDemoPageTitleUnderHeaderSection" />
+					<include
+						name="verifyBookALiveDemoPageTitleUnderFooterSection" />
+				</methods>
+			</class>
+
+			<class name="com.sisense.platform.ConnectivityTest">
+				<methods>
+					<include name="verifyConnectivityPageTitleUnderPlatformTab" />
+					<include name="verifyHomeBreadcrumbTitleUnderPlatformTab" />
+					<include
+						name="verifyPlatformBreadcrumbTitleUnderPlatformTab" />
+					<include
+						name="verifyBookADemoPageTitleUnderConnectYourDataSection" />
+					<include
+						name="verifyLearnAboutLiveConnectionsPageTitleUnderRealTimeInsightsSection" />
+					<include
+						name="verifyLearnAboutElasticubePageTitleUnderConsolidateDataSection" />
+					<include
+						name="verifyTryFreePageTitleUnderStartYourFreeTrialSection" />
+					<include name="verifyDemoPageTitleUnderHeader" />
+					<include name="verifyBookALiveDemoPageTitleUnderFooter" />
+				</methods>
+			</class>
+
+			<class name="com.sisense.platform.DataModelingTest">
+				<methods>
+					<include name="verifyDataModelingPageTitleUnderPlatformTab" />
+					<include
+						name="verifyHomeBreadcrumbTitleUnderDataModelingPage" />
+					<include
+						name="verifyPlatformBreadcrumbTitleUnderDataModelingPage" />
+					<include name="verifyBookaDemoPageTitleUnderBannerSection" />
+					<include
+						name="verifyLearnAboutPerspectivesPageTitleUnderTailoredViewsSection" />
+					<include
+						name="verifyTryFreePageTitleUnderStartYourFreeTrialSection" />
+					<include name="verifyDemoPageTitleUnderHeaderSection" />
+					<include
+						name="verifyBookaLiveDemoPageTitleUnderFooterSection" />
+				</methods>
+			</class>
+
+			<class name="com.sisense.platform.DataVisualizationTest">
+				<methods>
+					<include
+						name="verifyDataVisualizationPageTitleUnderPlatformTab" />
+					<include
+						name="verifyGetA7_DayFreeTrialPageTitleUnderHeroBanner" />
+					<include
+						name="verifyHomeBreadcrumbTitleUnderDataVisualizationPage" />
+					<include
+						name="verifyPlatformBreadcrumbTitleUnderDataVisualizationPage" />
+					<include name="verifyDemoPageTitleUnderHeaderSection" />
+					<include name="verifyFillFormFunctionality" />
+					<include name="verifyReadTheStoryPageTitle" />
+					<include name="verifyPrivacyPolicyPageUnderform" />
+					<include name="verifyTermsOfServicePageUnderform" />
+					<include
+						name="verifyBookaLiveDemoPageTitleUnderFooterSection" />
+				</methods>
+			</class>
+
+			<class name="com.sisense.platform.SisenseIntelligenceTest">
+				<methods>
+					<include
+						name="verifySisenseIntelligencePageTitleUnderPlatformTab" />
+					<include
+						name="verifyHomeBreadcrumbTitleUnderSisenseIntelligencePage" />
+					<include
+						name="verifyPlatformBreadcrumbTitleUnderSisenseIntelligencePage" />
+					<include
+						name="verifyBookALiveDemoPageTitleUnderBannerSection" />
+					<include
+						name="verifyLearnMorePageTitleUnderTransformChartsSection" />
+					<include
+						name="verifyComposeSDKLinkPageTitleUnderBuildOnceSection" />
+					<include
+						name="verifyTryFreePageTitleUnderStartYourFreeTrialSection" />
+					<include name="verifyDemoPageTitleUnderHeaderSection" />
+					<include
+						name="verifyBookaliveDemoPageTitleUnderFooterSection" />
+				</methods>
+			</class>
+
+			<class name="com.sisense.platform.TrustAndSecurityTest">
+				<methods>
+					<include name="verifySecurityPageTitleUnderPlatformTab" />
+					<include
+						name="verifyHomeBreadcrumbTitleUnderTrustAndSecurityPage" />
+					<include
+						name="verifyPlatformBreadcrumbTitleUnderTrustAndSecurityPage" />
+					<include name="verifyDemoPageTitleUnderHeaderSection" />
+					<include
+						name="verifyBookaLiveDemoPageTitleUnderFooterSection" />
+					<include name="verifyVisitSisenseTrustCenterPageTitle" />
+					<include
+						name="verifyLearnAboutPrivacyPolicyPageTitleUnderWeAreOnlySection" />
+				</methods>
+			</class>
+
+			<class name="com.sisense.platform.MarketplaceTest">
+				<methods>
+					<include
+						name="verifyMarketplacePageTitleUnderPlatformSection" />
+					<include
+						name="verifyHomeBreadcrumbTitleUnderMarketplacePage" />
+					<include
+						name="verifyCheckOutOurCommunityLinkTitleUnderBannerSection" />
+
+					<include name="verifySearchFunctionalityUnderFilterSection" />
+					<include
+						name="verifyPublisherFilterFunctionalityUnderFilterSection" />
+					<include
+						name="verifyFreeFilterUnderCostFilterFunctionality" />
+					<include
+						name="verifyPremiumFilterUnderCostFilterFunctionality" />
+					<include name="verifyFillFormFunctionality" />
+					<include name="verifyPrivacyPolicyPageTitleUnderForm" />
+					<include name="verifyTermsOfServicePageTitleUnderForm" />
+					<include name="verifyDemoPageTitleUnderHeaderSection" />
+					<include
+						name="verifyBookaliveDemoPageTitleUnderFooterSection" />
+				</methods>
+			</class>
+
+
+		</classes>
+	</test>
+</suite>

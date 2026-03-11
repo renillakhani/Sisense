@@ -1,0 +1,10 @@
+{
+	"testTC01": {
+		"username": "standard_user",
+		"password": "sauce_secret"
+	},
+	"testTC02": {
+		"username": "standard_user",
+		"password": "secret_sauce"
+	}
+}

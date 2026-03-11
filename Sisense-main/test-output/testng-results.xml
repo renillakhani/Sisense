@@ -20,27 +20,27 @@
       <![CDATA[<Strong><b>Sisense Testing is passed.</b></font></strong></br>]]>
     </line>
   </reporter-output>
-  <suite started-at="2026-03-10T11:17:54 IST" name="Current Pages" finished-at="2026-03-10T11:18:34 IST" duration-ms="40591">
+  <suite started-at="2026-03-11T12:08:59 IST" name="Current Pages" finished-at="2026-03-11T12:09:29 IST" duration-ms="29310">
     <groups>
     </groups>
-    <test started-at="2026-03-10T11:17:54 IST" name="Sisense Testing" finished-at="2026-03-10T11:18:34 IST" duration-ms="40591">
+    <test started-at="2026-03-11T12:08:59 IST" name="Sisense Testing" finished-at="2026-03-11T12:09:29 IST" duration-ms="29310">
       <class name="com.sisense.footer.SisenseFooterTest">
-        <test-method is-config="true" signature="fetchSuiteConfiguration()[pri:0, instance:com.sisense.footer.SisenseFooterTest@2c4d1ac]" started-at="2026-03-10T11:17:54 IST" name="fetchSuiteConfiguration" finished-at="2026-03-10T11:17:54 IST" duration-ms="31" status="PASS">
+        <test-method is-config="true" signature="fetchSuiteConfiguration()[pri:0, instance:com.sisense.footer.SisenseFooterTest@673be18f]" started-at="2026-03-11T12:08:59 IST" name="fetchSuiteConfiguration" finished-at="2026-03-11T12:08:59 IST" duration-ms="10" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fetchSuiteConfiguration -->
-        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:com.sisense.footer.SisenseFooterTest@2c4d1ac]" started-at="2026-03-10T11:17:54 IST" name="setUp" finished-at="2026-03-10T11:18:06 IST" duration-ms="11922" status="PASS">
+        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:com.sisense.footer.SisenseFooterTest@673be18f]" started-at="2026-03-11T12:08:59 IST" name="setUp" finished-at="2026-03-11T12:09:05 IST" duration-ms="5326" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@1ab5f08a]]>
+                <![CDATA[org.testng.TestRunner@2dc3271b]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifySupportPortalPageTitleUnderFooter()[pri:0, instance:com.sisense.footer.SisenseFooterTest@2c4d1ac]" started-at="2026-03-10T11:18:06 IST" name="verifySupportPortalPageTitleUnderFooter" finished-at="2026-03-10T11:18:34 IST" duration-ms="27978" status="PASS">
+        <test-method signature="verifySupportPortalPageTitleUnderFooter()[pri:0, instance:com.sisense.footer.SisenseFooterTest@673be18f]" started-at="2026-03-11T12:09:05 IST" name="verifySupportPortalPageTitleUnderFooter" finished-at="2026-03-11T12:09:28 IST" duration-ms="23658" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Open Browser</br>]]>
@@ -62,16 +62,16 @@
             </line>
           </reporter-output>
         </test-method> <!-- verifySupportPortalPageTitleUnderFooter -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult,org.testng.ITestContext)[pri:0, instance:com.sisense.footer.SisenseFooterTest@2c4d1ac]" started-at="2026-03-10T11:18:34 IST" name="tearDown" finished-at="2026-03-10T11:18:34 IST" duration-ms="580" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult,org.testng.ITestContext)[pri:0, instance:com.sisense.footer.SisenseFooterTest@673be18f]" started-at="2026-03-11T12:09:28 IST" name="tearDown" finished-at="2026-03-11T12:09:29 IST" duration-ms="279" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifySupportPortalPageTitleUnderFooter status=SUCCESS method=SisenseFooterTest.verifySupportPortalPageTitleUnderFooter()[pri:0, instance:com.sisense.footer.SisenseFooterTest@2c4d1ac] output=Open Browser</br>]]]>
+                <![CDATA[[TestResult name=verifySupportPortalPageTitleUnderFooter status=SUCCESS method=SisenseFooterTest.verifySupportPortalPageTitleUnderFooter()[pri:0, instance:com.sisense.footer.SisenseFooterTest@673be18f] output=Open Browser</br>]]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@1ab5f08a]]>
+                <![CDATA[org.testng.TestRunner@2dc3271b]]>
               </value>
             </param>
           </params>

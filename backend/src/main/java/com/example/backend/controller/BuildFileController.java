@@ -12,11 +12,24 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:3000")
 public class BuildFileController {
 
+    private final String buildPath;
+
+    public BuildFileController() {
+
+        String userDir = System.getProperty("user.dir");
+//        System.out.println("Backend running from: " + userDir);
+
+        buildPath = userDir
+                + File.separator + "Sisense-main"
+                + File.separator + "Build";
+
+//        System.out.println("Resolved Build Path: " + buildPath);
+    }
+
     @GetMapping("/files")
     public List<String> getBuildFiles() {
 
-        String buildPath = "D:/IDE/Sisense/Sisense-main/Build";
-
+        // Files that should NOT appear in frontend
         List<String> excludedFiles = List.of(
                 "GraphQL.xml",
                 "OrangeRecruitment.xml",
@@ -27,7 +40,7 @@ public class BuildFileController {
         File folder = new File(buildPath);
 
         if (!folder.exists() || !folder.isDirectory()) {
-            System.out.println("Build folder not found: " + buildPath);
+//            System.out.println("Build folder not found: " + buildPath);
             return new ArrayList<>();
         }
 
@@ -39,6 +52,7 @@ public class BuildFileController {
 
         List<String> result = new ArrayList<>();
 
+        // sort alphabetically
         Arrays.sort(files);
 
         for (File file : files) {
@@ -49,6 +63,7 @@ public class BuildFileController {
                     && name.endsWith(".xml")
                     && !excludedFiles.contains(name)) {
 
+                // remove .xml before sending to frontend
                 result.add(name.replace(".xml", ""));
             }
         }

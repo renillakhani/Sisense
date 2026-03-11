@@ -1,6 +1,7 @@
 package com.example.backend.controller;
 
 import org.springframework.web.bind.annotation.*;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,10 +11,20 @@ import java.util.List;
 @CrossOrigin
 public class ReportsFolderController {
 
-    private final String REPORTS_FOLDER_PATH =
-            "D:/IDE/Sisense/Sisense-main/Reports";
+    private final String REPORTS_FOLDER_PATH;
 
-    // Fetch all files from Reports folder
+    public ReportsFolderController() {
+
+        String userDir = System.getProperty("user.dir");
+//        System.out.println("Backend running from: " + userDir);
+
+        REPORTS_FOLDER_PATH = userDir
+                + File.separator + "Sisense-main"
+                + File.separator + "Reports";
+
+//        System.out.println("Resolved Reports Folder Path: " + REPORTS_FOLDER_PATH);
+    }
+
     @GetMapping("/files")
     public List<String> getReportsFiles() {
 
@@ -30,12 +41,10 @@ public class ReportsFolderController {
                     if (file.isFile()) {
                         reportFiles.add(file.getName());
                     }
-
                 }
             }
         }
 
         return reportFiles;
     }
-
 }

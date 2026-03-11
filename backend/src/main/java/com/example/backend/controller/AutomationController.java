@@ -13,7 +13,18 @@ import java.util.Map;
 @CrossOrigin(origins = "http://localhost:3000")
 public class AutomationController {
 
-    String automationProjectPath = "D:/IDE/Sisense/Sisense-main";
+    private final String automationProjectPath;
+
+    public AutomationController() {
+
+        String userDir = System.getProperty("user.dir");
+//        System.out.println("Backend running from: " + userDir);
+
+        automationProjectPath = userDir
+                + File.separator + "Sisense-main";
+
+//        System.out.println("Resolved Automation Project Path: " + automationProjectPath);
+    }
 
     @PostMapping("/run")
     public ResponseBodyEmitter runSuite(@RequestBody Map<String, String> request) {
@@ -60,7 +71,6 @@ public class AutomationController {
 
                     emitter.send("LOG:" + line + "\n");
 
-                    // Detect total tests
                     if (line.contains("Total tests run:")) {
 
                         String number = line.replaceAll("[^0-9]", "");
@@ -69,7 +79,6 @@ public class AutomationController {
                         emitter.send("TOTAL:" + totalTests + "\n");
                     }
 
-                    // Detect test result
                     if (line.contains("PASSED") ||
                             line.contains("FAILED") ||
                             line.contains("SKIPPED")) {
@@ -107,12 +116,11 @@ public class AutomationController {
         return emitter;
     }
 
-    // Report endpoint
     @GetMapping(value="/report", produces = MediaType.TEXT_HTML_VALUE)
     public FileSystemResource getReport() {
 
         File report = new File(
-                automationProjectPath + "/Sisense Automation Report.html"
+                automationProjectPath + File.separator + "Sisense Automation Report.html"
         );
 
         return new FileSystemResource(report);

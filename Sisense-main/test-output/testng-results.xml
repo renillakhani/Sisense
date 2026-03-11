@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[Open Browser</br>]]>
+    </line>
+    <line>
+      <![CDATA[Click on Accept Cookie button.</br>]]>
+    </line>
+    <line>
+      <![CDATA[Scroll to Footer section.</br>]]>
+    </line>
+    <line>
+      <![CDATA[Click on Support Portal link under Footer successfully.</br>]]>
+    </line>
+    <line>
+      <![CDATA[Sisense Footer Support Portal Page Title matched successfully.</br>]]>
+    </line>
+    <line>
+      <![CDATA[<Strong><b>Sisense Testing is passed.</b></font></strong></br>]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2026-03-10T11:17:54 IST" name="Current Pages" finished-at="2026-03-10T11:18:34 IST" duration-ms="40591">
+    <groups>
+    </groups>
+    <test started-at="2026-03-10T11:17:54 IST" name="Sisense Testing" finished-at="2026-03-10T11:18:34 IST" duration-ms="40591">
+      <class name="com.sisense.footer.SisenseFooterTest">
+        <test-method is-config="true" signature="fetchSuiteConfiguration()[pri:0, instance:com.sisense.footer.SisenseFooterTest@2c4d1ac]" started-at="2026-03-10T11:17:54 IST" name="fetchSuiteConfiguration" finished-at="2026-03-10T11:17:54 IST" duration-ms="31" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fetchSuiteConfiguration -->
+        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:com.sisense.footer.SisenseFooterTest@2c4d1ac]" started-at="2026-03-10T11:17:54 IST" name="setUp" finished-at="2026-03-10T11:18:06 IST" duration-ms="11922" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1ab5f08a]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifySupportPortalPageTitleUnderFooter()[pri:0, instance:com.sisense.footer.SisenseFooterTest@2c4d1ac]" started-at="2026-03-10T11:18:06 IST" name="verifySupportPortalPageTitleUnderFooter" finished-at="2026-03-10T11:18:34 IST" duration-ms="27978" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Open Browser</br>]]>
+            </line>
+            <line>
+              <![CDATA[Click on Accept Cookie button.</br>]]>
+            </line>
+            <line>
+              <![CDATA[Scroll to Footer section.</br>]]>
+            </line>
+            <line>
+              <![CDATA[Click on Support Portal link under Footer successfully.</br>]]>
+            </line>
+            <line>
+              <![CDATA[Sisense Footer Support Portal Page Title matched successfully.</br>]]>
+            </line>
+            <line>
+              <![CDATA[<Strong><b>Sisense Testing is passed.</b></font></strong></br>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- verifySupportPortalPageTitleUnderFooter -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult,org.testng.ITestContext)[pri:0, instance:com.sisense.footer.SisenseFooterTest@2c4d1ac]" started-at="2026-03-10T11:18:34 IST" name="tearDown" finished-at="2026-03-10T11:18:34 IST" duration-ms="580" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifySupportPortalPageTitleUnderFooter status=SUCCESS method=SisenseFooterTest.verifySupportPortalPageTitleUnderFooter()[pri:0, instance:com.sisense.footer.SisenseFooterTest@2c4d1ac] output=Open Browser</br>]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@1ab5f08a]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.sisense.footer.SisenseFooterTest -->
+    </test> <!-- Sisense Testing -->
+  </suite> <!-- Current Pages -->
+</testng-results>

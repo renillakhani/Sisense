@@ -1,0 +1,21 @@
+# Created at 2026-03-03T09:46:53.830
+java.lang.NoClassDefFoundError: com/kfast/reports/CustomReporterBuildSummary$TestSorter
+	at com.kfast.reports.CustomReporterBuildSummary.getMethodSet(CustomReporterBuildSummary.java:285)
+	at com.kfast.reports.CustomReporterBuildSummary.generateSuiteSummaryReport(CustomReporterBuildSummary.java:314)
+	at com.kfast.reports.CustomReporterBuildSummary.generateReport(CustomReporterBuildSummary.java:67)
+	at org.testng.TestNG.generateReports(TestNG.java:1178)
+	at org.testng.TestNG.run(TestNG.java:1107)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+Caused by: java.lang.ClassNotFoundException: com.kfast.reports.CustomReporterBuildSummary$TestSorter
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	... 12 more
+
+

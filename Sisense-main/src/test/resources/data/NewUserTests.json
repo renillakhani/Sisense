@@ -1,0 +1,17 @@
+{
+	"testPostUser": {
+	},
+	"testGetUserByName": {
+	},
+	"testUpdateUserByName": {
+	},
+	"testDeleteUserByName": {
+	},
+	"testPostUserUsingExcel": {
+	},
+	"testGetListUsers": {
+		"expectedEmail": "eve.holt@reqres.in",
+		"expectedFirstName": "Eve",
+		"expectedLastName": "Holt"
+	}
+}

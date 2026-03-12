@@ -1,4 +1,3 @@
-import { useEffect, useRef } from "react";
 import LOGO_KIWIQA from "../Images/kiwiqa-logo.png";
 import LOGO_SISENSE from "../Images/Sisense-Logo.svg";
 import CHROME_LOGO from "../Images/CHROME_LOGO.png";
@@ -6,6 +5,7 @@ import FIREFOX_LOGO from "../Images/FIREFOX_LOGO.png";
 import EDGE_LOGO from "../Images/EDGE_LOGO.png";
 import SAFARI_LOGO from "../Images/SAFARI_LOGO.png";
 import { Link } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 
 const CSS = `
   @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Sora:wght@400;600;700&display=swap');
@@ -119,6 +119,18 @@ const CSS = `
     gap: 8px;
     flex-wrap: wrap;
   }
+  .report-row {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  }
+
+  .report-row button,
+  .report-row a {
+    flex: 1;
+  }
+  
   .radio-chip {
     display: flex;
     align-items: center;
@@ -287,7 +299,7 @@ export default function AutomationDashboard({
   const setEnv = setEnvironment;
   const execMode = mode;
   const setExecMode = setMode;
-
+  const [showLogs, setShowLogs] = useState(false);
   const logRef = useRef(null);
 
   useEffect(() => {
@@ -321,7 +333,7 @@ export default function AutomationDashboard({
               </select>
             </div>
 
-            <div className="field-group">
+            <div className="field-group full-width">
               <label className="field-label">Browser</label>
               <div className="radio-row">
                 {[
@@ -376,9 +388,9 @@ export default function AutomationDashboard({
             )}
 
             {/* Report section */}
-            <div style={{ display: "flex", gap: "10px" }}>
+            <div className="report-row" style={{ display: "flex", gap: "10px" }}>
 
-              {/* View Report: alert if still running or no report yet */}
+              {/* View Report */}
               <button
                 onClick={() => {
 
@@ -395,9 +407,9 @@ export default function AutomationDashboard({
                   window.open("http://localhost:8081/api/report/latest", "_blank");
 
                 }}
-
                 style={{
-                  flex: 1, padding: "8px",
+                  flex: 1,
+                  padding: "8px",
                   background: "#fff",
                   border: "1.5px solid #7CC242",
                   borderRadius: "8px",
@@ -406,21 +418,21 @@ export default function AutomationDashboard({
                   fontWeight: 700,
                   fontSize: "13px",
                   textAlign: "center",
-                  textDecoration: "none",
                   display: "flex",
                   alignItems: "center",
-                  cursor: "pointer",
-                  justifyContent: "center"
+                  justifyContent: "center",
+                  cursor: "pointer"
                 }}
               >
                 View Report
               </button>
 
-              {/* View Reports History: always works */}
+              {/* View Reports History */}
               <Link
                 to="/reports"
                 style={{
-                  flex: 1, padding: "8px",
+                  flex: 1,
+                  padding: "8px",
                   background: "#fff",
                   border: "1.5px solid #7CC242",
                   borderRadius: "8px",
@@ -438,27 +450,52 @@ export default function AutomationDashboard({
                 View Reports History
               </Link>
 
+              {/* View Execution Logs */}
+              <button
+                onClick={() => setShowLogs(!showLogs)}
+                style={{
+                  flex: 1,
+                  padding: "8px",
+                  background: "#fff",
+                  border: "1.5px solid #7CC242",
+                  borderRadius: "8px",
+                  color: "#3a7a10",
+                  fontFamily: "'Sora',sans-serif",
+                  fontWeight: 700,
+                  fontSize: "13px",
+                  textAlign: "center",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  cursor: "pointer"
+                }}
+              >
+                {showLogs ? "Hide Execution Logs" : "View Execution Logs"}
+              </button>
+
             </div>
           </div>
 
-          <div className="logs-card">
-            <div className="logs-header">
-              <div className="logs-header-left">
-                <div className={`logs-dot ${loading ? "active" : ""}`} />
-                <span className="logs-title">Execution Logs</span>
+          {showLogs && (
+            <div className="logs-card">
+              <div className="logs-header">
+                <div className="logs-header-left">
+                  <div className={`logs-dot ${loading ? "active" : ""}`} />
+                  <span className="logs-title">Execution Logs</span>
+                </div>
+              </div>
+              <div className="log-box" ref={logRef}>
+                {logs.length === 0
+                  ? <p className="empty-log">Execution logs.....</p>
+                  : logs.map((log, i) => (
+                    <div key={i} className="log-line">
+                      {typeof log === "string" ? log : log.text}
+                    </div>
+                  ))
+                }
               </div>
             </div>
-            <div className="log-box" ref={logRef}>
-              {logs.length === 0
-                ? <p className="empty-log">Execution logs.....</p>
-                : logs.map((log, i) => (
-                  <div key={i} className="log-line">
-                    {typeof log === "string" ? log : log.text}
-                  </div>
-                ))
-              }
-            </div>
-          </div>
+          )}
 
           <div className="status-bar">
             <div className="status-pill">env <span>{env}</span></div>

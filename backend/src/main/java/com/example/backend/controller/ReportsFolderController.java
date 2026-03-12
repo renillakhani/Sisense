@@ -16,18 +16,8 @@ public class ReportsFolderController {
 
     public ReportsFolderController() {
 
-<<<<<<< HEAD
         REPORTS_FOLDER_PATH = ProjectPaths.reportsFolder();
-=======
-        String userDir = System.getProperty("user.dir");
-       System.out.println("Backend running from: " + userDir);
 
-        REPORTS_FOLDER_PATH = userDir
-                + File.separator + "Sisense-main"
-                + File.separator + "Reports";
-
-       System.out.println("Resolved Reports Folder Path: " + REPORTS_FOLDER_PATH);
->>>>>>> 2f29a81000843fc05ddf1b601b3f6ccdff51f99c
     }
 
     @GetMapping("/files")

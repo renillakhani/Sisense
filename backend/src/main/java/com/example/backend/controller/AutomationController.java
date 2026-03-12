@@ -18,12 +18,12 @@ public class AutomationController {
     public AutomationController() {
 
         String userDir = System.getProperty("user.dir");
-//        System.out.println("Backend running from: " + userDir);
+       System.out.println("Backend running from: " + userDir);
 
         automationProjectPath = userDir
                 + File.separator + "Sisense-main";
 
-//        System.out.println("Resolved Automation Project Path: " + automationProjectPath);
+       System.out.println("Resolved Automation Project Path: " + automationProjectPath);
     }
 
     @PostMapping("/run")

@@ -1,6 +1,10 @@
 import { useEffect, useRef } from "react";
 import LOGO_KIWIQA from "../Images/kiwiqa-logo.png";
 import LOGO_SISENSE from "../Images/Sisense-Logo.svg";
+import CHROME_LOGO from "../Images/CHROME_LOGO.png";
+import FIREFOX_LOGO from "../Images/FIREFOX_LOGO.png";
+import EDGE_LOGO from "../Images/EDGE_LOGO.png";
+import SAFARI_LOGO from "../Images/SAFARI_LOGO.png";
 import { Link } from "react-router-dom";
 
 const CSS = `
@@ -68,7 +72,7 @@ const CSS = `
     width: 100%;
     max-width: 780px;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 28px 48px;
     align-items: start;
     box-shadow: 0 4px 20px rgba(100,160,100,0.10);
@@ -266,18 +270,18 @@ const CSS = `
 `;
 
 export default function AutomationDashboard({
-                                              environment, setEnvironment,
-                                              browser, setBrowser,
-                                              mode, setMode,
-                                              file, setFile,
-                                              buildFiles = [],
-                                              logs = [],
-                                              loading = false,
-                                              reportReady = false,
-                                              progress = 0,
-                                              steps = 0,
-                                              onExecute,
-                                            }) {
+  environment, setEnvironment,
+  browser, setBrowser,
+  mode, setMode,
+  file, setFile,
+  buildFiles = [],
+  logs = [],
+  loading = false,
+  reportReady = false,
+  progress = 0,
+  steps = 0,
+  onExecute,
+}) {
   // aliases so the JSX below stays unchanged
   const env = environment;
   const setEnv = setEnvironment;
@@ -291,161 +295,178 @@ export default function AutomationDashboard({
   }, [logs]);
 
   return (
-      <>
-        <style>{CSS}</style>
-        <div className="dash-root">
-          <header className="dash-header">
-            <img src={LOGO_KIWIQA} alt="KiwiQA" className="kiwi-logo" />
-            <div className="dash-title">Automation Dashboard</div>
-            <img src={LOGO_SISENSE} alt="Sisense" className="sisense-logo" />
-          </header>
+    <>
+      <style>{CSS}</style>
+      <div className="dash-root">
+        <header className="dash-header">
+          <img src={LOGO_KIWIQA} alt="KiwiQA" className="kiwi-logo" />
+          <div className="dash-title">Automation Dashboard</div>
+          <img src={LOGO_SISENSE} alt="Sisense" className="sisense-logo" />
+        </header>
 
-          <main className="dash-body">
-            <div className="controls-card">
-              <div className="field-group">
-                <label className="field-label">Environment</label>
-                <select className="dash-select" value={env} onChange={e => setEnv(e.target.value)}>
-                  {["QA", "Staging", "Production", "Dev"].map(e => <option key={e}>{e}</option>)}
-                </select>
+        <main className="dash-body">
+          <div className="controls-card">
+            <div className="field-group">
+              <label className="field-label">Environment</label>
+              <select className="dash-select" value={env} onChange={e => setEnv(e.target.value)}>
+                {["QA", "Staging", "Production", "Dev"].map(e => <option key={e}>{e}</option>)}
+              </select>
+            </div>
+
+            <div className="field-group">
+              <label className="field-label">Test Suite</label>
+              <select className="dash-select" value={file} onChange={e => setFile(e.target.value)}>
+                <option value="" disabled={true}>Select Test Suite</option>
+                {buildFiles.map(f => <option key={f}>{f}</option>)}
+              </select>
+            </div>
+
+            <div className="field-group">
+              <label className="field-label">Browser</label>
+              <div className="radio-row">
+                {[
+                  { name: "Chrome", logo: CHROME_LOGO },
+                  { name: "Firefox", logo: FIREFOX_LOGO },
+                  { name: "Edge", logo: EDGE_LOGO },
+                  { name: "Safari", logo: SAFARI_LOGO },
+                ].map(b => (
+                  <label key={b.name} className={`radio-chip ${browser === b.name ? "active" : ""}`}>
+                    <input
+                      type="radio"
+                      value={b.name}
+                      checked={browser === b.name}
+                      onChange={() => setBrowser(b.name)}
+                    />
+                    <img
+                      src={b.logo}
+                      alt={b.name}
+                      style={{ width: "16px", height: "16px", objectFit: "contain" }}
+                    />
+                    {b.name}
+                  </label>
+                ))}
               </div>
+            </div>
 
-              <div className="field-group">
-                <label className="field-label">Test Suite</label>
-                <select className="dash-select" value={file} onChange={e => setFile(e.target.value)}>
-                  <option value="" disabled={true}>Select Test Suite</option>
-                  {buildFiles.map(f => <option key={f}>{f}</option>)}
-                </select>
-              </div>
+            <button
+              className={`execute-btn ${loading ? "running" : ""}`}
+              onClick={onExecute}
+              disabled={loading}
+            >
+              {loading ? "⏳  Running..." : "▶  Execute"}
+            </button>
 
-              <div className="field-group">
-                <label className="field-label">Browser</label>
-                <div className="radio-row">
-                  {["Chrome", "Firefox", "Edge"].map(b => (
-                      <label key={b} className={`radio-chip ${browser === b ? "active" : ""}`}>
-                        <input type="radio" value={b} checked={browser === b} onChange={() => setBrowser(b)} />
-                        <span className="radio-dot" />
-                        {b}
-                      </label>
-                  ))}
+            {/* Progress bar */}
+            {loading && (
+              <div className="field-group full-width" style={{ marginTop: "12px" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", marginTop: "6px", fontFamily: "'JetBrains Mono',monospace", fontSize: "11px", color: "#5a8a5a" }}>
+
+                  <span>Execution in Process...</span>
+
+                </div>
+                <div style={{ background: "#d4ecd4", borderRadius: "8px", overflow: "hidden", height: "10px" }}>
+                  <div style={{ width: `${progress}%`, height: "100%", background: "linear-gradient(90deg,#7CC242,#5a9e20)", transition: "width 0.4s ease" }} />
+                </div>
+
+                <div style={{ display: "flex", justifyContent: "space-between", marginTop: "6px", fontFamily: "'JetBrains Mono',monospace", fontSize: "11px", color: "#5a8a5a" }}>
+                  <span>Steps executed: <strong>{steps}</strong></span>
+                  <span><strong>{progress}%</strong> completed</span>
                 </div>
               </div>
+            )}
 
+            {/* Report section */}
+            <div style={{ display: "flex", gap: "10px" }}>
+
+              {/* View Report: alert if still running or no report yet */}
               <button
-                  className={`execute-btn ${loading ? "running" : ""}`}
-                  onClick={onExecute}
-                  disabled={loading}
+                onClick={() => {
+
+                  if (loading) {
+                    alert("⚠️ Execution is still in progress. Please wait.");
+                    return;
+                  }
+
+                  if (!reportReady) {
+                    alert("⚠️ Please execute the test suite first.");
+                    return;
+                  }
+
+                  window.open("http://localhost:8081/api/report/latest", "_blank");
+
+                }}
+
+                style={{
+                  flex: 1, padding: "8px",
+                  background: "#fff",
+                  border: "1.5px solid #7CC242",
+                  borderRadius: "8px",
+                  color: "#3a7a10",
+                  fontFamily: "'Sora',sans-serif",
+                  fontWeight: 700,
+                  fontSize: "13px",
+                  textAlign: "center",
+                  textDecoration: "none",
+                  display: "flex",
+                  alignItems: "center",
+                  cursor: "pointer",
+                  justifyContent: "center"
+                }}
               >
-                {loading ? "⏳  Running..." : "▶  Execute"}
+                View Report
               </button>
 
-              {/* Progress bar */}
-              {loading && (
-                  <div className="field-group full-width" style={{ marginTop: "12px" }}>
-                      <div style={{ display: "flex", justifyContent: "space-between", marginTop: "6px", fontFamily: "'JetBrains Mono',monospace", fontSize: "11px", color: "#5a8a5a" }}>
+              {/* View Reports History: always works */}
+              <Link
+                to="/reports"
+                style={{
+                  flex: 1, padding: "8px",
+                  background: "#fff",
+                  border: "1.5px solid #7CC242",
+                  borderRadius: "8px",
+                  color: "#3a7a10",
+                  fontFamily: "'Sora',sans-serif",
+                  fontWeight: 700,
+                  fontSize: "13px",
+                  textAlign: "center",
+                  textDecoration: "none",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center"
+                }}
+              >
+                View Reports History
+              </Link>
 
-                          <span>Execution in Process...</span>
+            </div>
+          </div>
 
-                      </div>
-                      <div style={{ background: "#d4ecd4", borderRadius: "8px", overflow: "hidden", height: "10px" }}>
-                      <div style={{ width: `${progress}%`, height: "100%", background: "linear-gradient(90deg,#7CC242,#5a9e20)", transition: "width 0.4s ease" }} />
-                    </div>
-
-                    <div style={{ display: "flex", justifyContent: "space-between", marginTop: "6px", fontFamily: "'JetBrains Mono',monospace", fontSize: "11px", color: "#5a8a5a" }}>
-                      <span>Steps executed: <strong>{steps}</strong></span>
-                      <span><strong>{progress}%</strong> completed</span>
-                    </div>
+          <div className="logs-card">
+            <div className="logs-header">
+              <div className="logs-header-left">
+                <div className={`logs-dot ${loading ? "active" : ""}`} />
+                <span className="logs-title">Execution Logs</span>
+              </div>
+            </div>
+            <div className="log-box" ref={logRef}>
+              {logs.length === 0
+                ? <p className="empty-log">Execution logs.....</p>
+                : logs.map((log, i) => (
+                  <div key={i} className="log-line">
+                    {typeof log === "string" ? log : log.text}
                   </div>
-              )}
-
-              {/* Report section */}
-              <div style={{ display: "flex", gap: "10px" }}>
-
-                {/* View Report: alert if still running or no report yet */}
-                <button
-                    onClick={() => {
-
-                        if (loading) {
-                            alert("⚠️ Execution is still in progress. Please wait.");
-                            return;
-                        }
-
-                        if (!reportReady) {
-                            alert("⚠️ Please execute the test suite first.");
-                            return;
-                        }
-
-                        window.open("http://localhost:8081/api/report/latest", "_blank");
-
-                    }}
-
-                    style={{ flex:1,padding:"8px",
-                        background:"#fff",
-                        border:"1.5px solid #7CC242",
-                        borderRadius:"8px",
-                        color:"#3a7a10",
-                        fontFamily:"'Sora',sans-serif",
-                        fontWeight:700,
-                        fontSize:"13px",
-                        textAlign:"center",
-                        textDecoration:"none",
-                        display:"flex",
-                        alignItems:"center",
-                        cursor: "pointer",
-                        justifyContent:"center"}}
-                >
-                    View Report
-                </button>
-
-                {/* View Reports History: always works */}
-                  <Link
-                      to="/reports"
-                      style={{ flex:1,padding:"8px",
-                          background:"#fff",
-                          border:"1.5px solid #7CC242",
-                          borderRadius:"8px",
-                          color:"#3a7a10",
-                          fontFamily:"'Sora',sans-serif",
-                          fontWeight:700,
-                          fontSize:"13px",
-                          textAlign:"center",
-                          textDecoration:"none",
-                          display:"flex",
-                          alignItems:"center",
-                          justifyContent:"center"
-                      }}
-                  >
-                      View Reports History
-                  </Link>
-
-              </div>
+                ))
+              }
             </div>
+          </div>
 
-            <div className="logs-card">
-              <div className="logs-header">
-                <div className="logs-header-left">
-                  <div className={`logs-dot ${loading ? "active" : ""}`} />
-                  <span className="logs-title">Execution Logs</span>
-                </div>
-              </div>
-              <div className="log-box" ref={logRef}>
-                {logs.length === 0
-                    ? <p className="empty-log">Execution logs.....</p>
-                    : logs.map((log, i) => (
-                        <div key={i} className="log-line">
-                          {typeof log === "string" ? log : log.text}
-                        </div>
-                    ))
-                }
-              </div>
-            </div>
-
-            <div className="status-bar">
-              <div className="status-pill">env <span>{env}</span></div>
-              <div className="status-pill">browser <span>{browser}</span></div>
-              <div className="status-pill">mode <span>{execMode}</span></div>
-            </div>
-          </main>
-        </div>
-      </>
+          <div className="status-bar">
+            <div className="status-pill">env <span>{env}</span></div>
+            <div className="status-pill">browser <span>{browser}</span></div>
+            <div className="status-pill">mode <span>{execMode}</span></div>
+          </div>
+        </main>
+      </div>
+    </>
   );
 }

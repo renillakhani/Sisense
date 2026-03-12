@@ -16,13 +16,13 @@ public class ReportsFolderController {
     public ReportsFolderController() {
 
         String userDir = System.getProperty("user.dir");
-//        System.out.println("Backend running from: " + userDir);
+       System.out.println("Backend running from: " + userDir);
 
         REPORTS_FOLDER_PATH = userDir
                 + File.separator + "Sisense-main"
                 + File.separator + "Reports";
 
-//        System.out.println("Resolved Reports Folder Path: " + REPORTS_FOLDER_PATH);
+       System.out.println("Resolved Reports Folder Path: " + REPORTS_FOLDER_PATH);
     }
 
     @GetMapping("/files")

@@ -17,13 +17,14 @@ public class BuildFileController {
     public BuildFileController() {
 
         String userDir = System.getProperty("user.dir");
-//        System.out.println("Backend running from: " + userDir);
+       System.out.println("Backend running from: " + userDir);
 
         buildPath = userDir
+                + File.separator + ".."
                 + File.separator + "Sisense-main"
                 + File.separator + "Build";
 
-//        System.out.println("Resolved Build Path: " + buildPath);
+       System.out.println("Resolved Build Path: " + buildPath);
     }
 
     @GetMapping("/files")
@@ -40,7 +41,7 @@ public class BuildFileController {
         File folder = new File(buildPath);
 
         if (!folder.exists() || !folder.isDirectory()) {
-//            System.out.println("Build folder not found: " + buildPath);
+           System.out.println("Build folder not found: " + buildPath);
             return new ArrayList<>();
         }
 

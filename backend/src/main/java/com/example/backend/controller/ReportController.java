@@ -22,7 +22,7 @@ public class ReportController {
     public ReportController() {
 
         String userDir = System.getProperty("user.dir");
-//        System.out.println("Backend running from: " + userDir);
+       System.out.println("Backend running from: " + userDir);
 
         PROJECT_PATH = userDir + File.separator + "Sisense-main";
 
@@ -32,7 +32,7 @@ public class ReportController {
         REPORTS_FOLDER =
                 PROJECT_PATH + File.separator + "Reports";
 
-//        System.out.println("Resolved Project Path: " + PROJECT_PATH);
+       System.out.println("Resolved Project Path: " + PROJECT_PATH);
     }
 
     @GetMapping("/report/status")

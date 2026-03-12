@@ -279,6 +279,73 @@ const CSS = `
     gap: 5px;
   }
   .status-pill span { color: #7CC242; font-weight: 600; }
+  /* Popup overlay */
+.confirm-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+/* Popup box */
+.confirm-modal {
+  background: #ffffff;
+  border: 1.5px solid #c8e0c8;
+  border-radius: 14px;
+  padding: 28px 32px;
+  width: 360px;
+  text-align: center;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.15);
+}
+
+/* Title */
+.confirm-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2d5a2d;
+  margin-bottom: 12px;
+}
+
+/* Text */
+.confirm-text {
+  font-size: 13px;
+  color: #5a8a5a;
+  margin-bottom: 22px;
+}
+
+/* Buttons container */
+.confirm-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Cancel button */
+.confirm-cancel {
+  padding: 7px 18px;
+  border: 1.5px solid #c8e0c8;
+  border-radius: 8px;
+  background: #fff;
+  color: #5a8a5a;
+  cursor: pointer;
+}
+
+/* Execute button */
+.confirm-run {
+  padding: 7px 18px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg,#7CC242,#5a9e20);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
 `;
 
 export default function AutomationDashboard({
@@ -300,6 +367,7 @@ export default function AutomationDashboard({
   const execMode = mode;
   const setExecMode = setMode;
   const [showLogs, setShowLogs] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
   const logRef = useRef(null);
 
   useEffect(() => {
@@ -362,7 +430,7 @@ export default function AutomationDashboard({
 
             <button
               className={`execute-btn ${loading ? "running" : ""}`}
-              onClick={onExecute}
+              onClick={() => setShowConfirm(true)}
               disabled={loading}
             >
               {loading ? "⏳  Running..." : "▶  Execute"}
@@ -503,6 +571,44 @@ export default function AutomationDashboard({
             <div className="status-pill">mode <span>{execMode}</span></div>
           </div>
         </main>
+        {showConfirm && (
+          <div className="confirm-overlay">
+
+            <div className="confirm-modal">
+
+              <div className="confirm-title">
+                Confirm Execution
+              </div>
+
+              <div className="confirm-text">
+                Are you sure you want to execute this test suite?
+              </div>
+
+              <div className="confirm-actions">
+
+                <button
+                  className="confirm-cancel"
+                  onClick={() => setShowConfirm(false)}
+                >
+                  Cancel
+                </button>
+
+                <button
+                  className="confirm-run"
+                  onClick={() => {
+                    setShowConfirm(false);
+                    onExecute();
+                  }}
+                >
+                  Execute
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+        )}
       </div>
     </>
   );

@@ -297,7 +297,7 @@ return(
                                 <tr>
                                     <th>#</th>
                                     <th>Report Name</th>
-                                    <th>Actions</th>
+                                    <th style={{ textAlign: "center" }}>Actions</th>
                                 </tr>
                                 </thead>
 

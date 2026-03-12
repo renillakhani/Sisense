@@ -63,38 +63,60 @@ public class AutomationController {
 
                 int totalTests = 0;
                 int executedTests = 0;
+                boolean totalCaptured = false;
 
                 while ((line = reader.readLine()) != null) {
 
                     emitter.send("LOG:" + line + "\n");
 
-                    if (line.contains("Total tests run:")) {
+    /* ----------------------------------
+       Capture total test count ONCE
+    ---------------------------------- */
+                    if (!totalCaptured && line.contains("Tests run:")) {
 
-                        String number = line.replaceAll("[^0-9]", "");
-                        totalTests = Integer.parseInt(number);
+                        try {
 
-                        emitter.send("TOTAL:" + totalTests + "\n");
+                            String[] parts = line.split(",");
+                            totalTests = Integer.parseInt(parts[0].replaceAll("[^0-9]", ""));
+
+                            totalCaptured = true;
+
+                            emitter.send("TOTAL:" + totalTests + "\n");
+
+                        } catch (Exception ignored) {}
+
                     }
 
-                    if (line.contains("PASSED") ||
-                            line.contains("FAILED") ||
-                            line.contains("SKIPPED")) {
+    /* ----------------------------------
+       Count only REAL test results
+    ---------------------------------- */
+                    if (line.matches(".*\\b(PASSED|FAILED|SKIPPED)\\b.*") &&
+                            !line.contains("Configuration") &&
+                            !line.contains("Time elapsed") &&
+                            !line.contains("Tests run:")) {
 
                         executedTests++;
 
                         if (totalTests > 0) {
 
-                            int progress =
-                                    (int) (((double) executedTests / totalTests) * 100);
+                            int progress = (int) ((executedTests * 100.0) / totalTests);
+
+                            if (progress > 100) {
+                                progress = 100;
+                            }
 
                             emitter.send("PROGRESS:" + progress + "\n");
+                            emitter.send("STEPS:" + executedTests + "\n");
                         }
                     }
                 }
 
                 process.waitFor();
 
+                // ensure progress completes
                 emitter.send("PROGRESS:100\n");
+
+                // notify frontend execution finished
                 emitter.send("COMPLETE\n");
 
                 emitter.complete();
@@ -102,7 +124,7 @@ public class AutomationController {
             } catch (Exception e) {
 
                 try {
-                    emitter.send("LOG:ERROR:" + e.getMessage());
+                    emitter.send("LOG:ERROR: " + e.getMessage() + "\n");
                 } catch (Exception ignored) {}
 
                 emitter.completeWithError(e);
@@ -113,7 +135,11 @@ public class AutomationController {
         return emitter;
     }
 
-    @GetMapping(value="/report", produces = MediaType.TEXT_HTML_VALUE)
+    /* =====================================
+       VIEW AUTOMATION REPORT
+    ===================================== */
+
+    @GetMapping(value = "/report", produces = MediaType.TEXT_HTML_VALUE)
     public FileSystemResource getReport() {
 
         return new FileSystemResource(ProjectPaths.mainReport());

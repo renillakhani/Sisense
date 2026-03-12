@@ -428,11 +428,20 @@ export default function AutomationDashboard({
               </div>
             </div>
 
-            <button
-              className={`execute-btn ${loading ? "running" : ""}`}
-              onClick={() => setShowConfirm(true)}
-              disabled={loading}
-            >
+              <button
+                  className={`execute-btn ${loading ? "running" : ""}`}
+                  onClick={() => {
+
+                      if (!file) {
+                          alert("⚠️ Please select a Test Suite before executing.");
+                          return;
+                      }
+
+                      setShowConfirm(true);
+
+                  }}
+                  disabled={loading}
+              >
               {loading ? "⏳  Running..." : "▶  Execute"}
             </button>
 

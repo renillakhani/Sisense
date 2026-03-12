@@ -20,11 +20,11 @@
 					<include name="verifyHomeBreadcrumbTitle" /> 
 					<include name="verifyScheduleaDemo" />
 					<include name="verifyBookaLiveDemoPageTitleUnderFooterSection" />
-					<!-- <include name="verifyScheduleADemoFormOpen" />
+					<include name="verifyScheduleADemoFormOpen" />
 					<include name="verifyScheduleADemoFunctionality" />
 					<include name="verifyWatchDemoFormOpen" />
 					<include name="verifyWatchDemoFunctionality" />
-					<include name="verifyContactUsPageTitle" /> -->
+					<include name="verifyContactUsPageTitle" />
 					
 				</methods>
 			</class>

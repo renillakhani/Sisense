@@ -1,5 +1,6 @@
 package com.example.backend.controller;
 
+import com.example.backend.config.ProjectPaths;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,24 +16,13 @@ import java.util.*;
 @CrossOrigin
 public class ReportController {
 
-    private final String PROJECT_PATH;
     private final String MAIN_REPORT;
     private final String REPORTS_FOLDER;
 
     public ReportController() {
 
-        String userDir = System.getProperty("user.dir");
-//        System.out.println("Backend running from: " + userDir);
-
-        PROJECT_PATH = userDir + File.separator + "Sisense-main";
-
-        MAIN_REPORT =
-                PROJECT_PATH + File.separator + "Sisense Automation Report.html";
-
-        REPORTS_FOLDER =
-                PROJECT_PATH + File.separator + "Reports";
-
-//        System.out.println("Resolved Project Path: " + PROJECT_PATH);
+        MAIN_REPORT = ProjectPaths.mainReport();
+        REPORTS_FOLDER = ProjectPaths.reportsFolder();
     }
 
     @GetMapping("/report/status")
@@ -93,10 +83,6 @@ public class ReportController {
 
         File folder = new File(REPORTS_FOLDER);
 
-        if (!folder.exists()) {
-            return ResponseEntity.ok(new ArrayList<>());
-        }
-
         File[] files =
                 folder.listFiles((dir, name) -> name.endsWith(".html"));
 
@@ -114,8 +100,7 @@ public class ReportController {
     }
 
     @GetMapping("/reports/view/{name}")
-    public ResponseEntity<FileSystemResource> viewReport(
-            @PathVariable String name) {
+    public ResponseEntity<FileSystemResource> viewReport(@PathVariable String name) {
 
         File file = new File(REPORTS_FOLDER + File.separator + name);
 
@@ -129,8 +114,7 @@ public class ReportController {
     }
 
     @GetMapping("/reports/download/{name}")
-    public ResponseEntity<FileSystemResource> downloadReport(
-            @PathVariable String name) {
+    public ResponseEntity<FileSystemResource> downloadReport(@PathVariable String name) {
 
         File file = new File(REPORTS_FOLDER + File.separator + name);
 
@@ -147,37 +131,21 @@ public class ReportController {
     @GetMapping("/report/latest")
     public ResponseEntity<FileSystemResource> getLatestReport() {
 
-        try {
+        File reportsDir = new File(REPORTS_FOLDER);
 
-            File reportsDir = new File(REPORTS_FOLDER);
+        File[] reports =
+                reportsDir.listFiles((dir, name) -> name.endsWith(".html"));
 
-            if (!reportsDir.exists()) {
-                return ResponseEntity.notFound().build();
-            }
-
-            File[] reports =
-                    reportsDir.listFiles((dir, name) -> name.endsWith(".html"));
-
-            if (reports == null || reports.length == 0) {
-                return ResponseEntity.notFound().build();
-            }
-
-            File latestReport = reports[0];
-
-            for (File file : reports) {
-                if (file.lastModified() > latestReport.lastModified()) {
-                    latestReport = file;
-                }
-            }
-
-            return ResponseEntity.ok()
-                    .header("Content-Type", "text/html")
-                    .body(new FileSystemResource(latestReport));
-
-        } catch (Exception e) {
-
-            e.printStackTrace();
-            return ResponseEntity.internalServerError().build();
+        if (reports == null || reports.length == 0) {
+            return ResponseEntity.notFound().build();
         }
+
+        File latestReport = Arrays.stream(reports)
+                .max(Comparator.comparingLong(File::lastModified))
+                .orElse(null);
+
+        return ResponseEntity.ok()
+                .header("Content-Type", "text/html")
+                .body(new FileSystemResource(latestReport));
     }
 }

@@ -1,5 +1,6 @@
 package com.example.backend.controller;
 
+import com.example.backend.config.ProjectPaths;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
@@ -15,14 +16,7 @@ public class ReportsFolderController {
 
     public ReportsFolderController() {
 
-        String userDir = System.getProperty("user.dir");
-//        System.out.println("Backend running from: " + userDir);
-
-        REPORTS_FOLDER_PATH = userDir
-                + File.separator + "Sisense-main"
-                + File.separator + "Reports";
-
-//        System.out.println("Resolved Reports Folder Path: " + REPORTS_FOLDER_PATH);
+        REPORTS_FOLDER_PATH = ProjectPaths.reportsFolder();
     }
 
     @GetMapping("/files")

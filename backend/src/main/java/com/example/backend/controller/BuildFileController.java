@@ -1,5 +1,6 @@
 package com.example.backend.controller;
 
+import com.example.backend.config.ProjectPaths;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
@@ -16,20 +17,12 @@ public class BuildFileController {
 
     public BuildFileController() {
 
-        String userDir = System.getProperty("user.dir");
-//        System.out.println("Backend running from: " + userDir);
-
-        buildPath = userDir
-                + File.separator + "Sisense-main"
-                + File.separator + "Build";
-
-//        System.out.println("Resolved Build Path: " + buildPath);
+        buildPath = ProjectPaths.buildFolder();
     }
 
     @GetMapping("/files")
     public List<String> getBuildFiles() {
 
-        // Files that should NOT appear in frontend
         List<String> excludedFiles = List.of(
                 "GraphQL.xml",
                 "OrangeRecruitment.xml",
@@ -40,7 +33,6 @@ public class BuildFileController {
         File folder = new File(buildPath);
 
         if (!folder.exists() || !folder.isDirectory()) {
-//            System.out.println("Build folder not found: " + buildPath);
             return new ArrayList<>();
         }
 
@@ -52,7 +44,6 @@ public class BuildFileController {
 
         List<String> result = new ArrayList<>();
 
-        // sort alphabetically
         Arrays.sort(files);
 
         for (File file : files) {
@@ -63,7 +54,6 @@ public class BuildFileController {
                     && name.endsWith(".xml")
                     && !excludedFiles.contains(name)) {
 
-                // remove .xml before sending to frontend
                 result.add(name.replace(".xml", ""));
             }
         }

@@ -1,5 +1,6 @@
 package com.example.backend.controller;
 
+import com.example.backend.config.ProjectPaths;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -17,13 +18,8 @@ public class AutomationController {
 
     public AutomationController() {
 
-        String userDir = System.getProperty("user.dir");
-//        System.out.println("Backend running from: " + userDir);
-
-        automationProjectPath = userDir
-                + File.separator + "Sisense-main";
-
-//        System.out.println("Resolved Automation Project Path: " + automationProjectPath);
+        automationProjectPath = ProjectPaths.sisenseMain();
+        System.out.println("Resolved Automation Path: " + automationProjectPath);
     }
 
     @PostMapping("/run")
@@ -119,10 +115,6 @@ public class AutomationController {
     @GetMapping(value="/report", produces = MediaType.TEXT_HTML_VALUE)
     public FileSystemResource getReport() {
 
-        File report = new File(
-                automationProjectPath + File.separator + "Sisense Automation Report.html"
-        );
-
-        return new FileSystemResource(report);
+        return new FileSystemResource(ProjectPaths.mainReport());
     }
 }

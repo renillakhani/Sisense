@@ -23,6 +23,7 @@ public class ReportController {
 
         MAIN_REPORT = ProjectPaths.mainReport();
         REPORTS_FOLDER = ProjectPaths.reportsFolder();
+
     }
 
     @GetMapping("/report/status")

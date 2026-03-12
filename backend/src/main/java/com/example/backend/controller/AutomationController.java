@@ -18,8 +18,18 @@ public class AutomationController {
 
     public AutomationController() {
 
+<<<<<<< HEAD
         automationProjectPath = ProjectPaths.sisenseMain();
         System.out.println("Resolved Automation Path: " + automationProjectPath);
+=======
+        String userDir = System.getProperty("user.dir");
+       System.out.println("Backend running from: " + userDir);
+
+        automationProjectPath = userDir
+                + File.separator + "Sisense-main";
+
+       System.out.println("Resolved Automation Project Path: " + automationProjectPath);
+>>>>>>> 2f29a81000843fc05ddf1b601b3f6ccdff51f99c
     }
 
     @PostMapping("/run")

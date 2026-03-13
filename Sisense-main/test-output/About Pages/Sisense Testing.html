@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Sisense Testing</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>34/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>33/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Mar 03 09:47:19 IST 2026</td>
+<td>Started on:</td><td>Fri Mar 13 09:49:06 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>1105 seconds (1105494 ms)</td>
+<tr><td>Total time:</td><td>871 seconds (871195 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,87 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.sisense.about.PartnersTest.verifyFillFormBecomeaPartnerFunctionality()'><b>verifyFillFormBecomeaPartnerFunctionality</b><br>Test class: com.sisense.about.PartnersTest<br/>
+<a href="#Output-1444280365" onClick='toggleBox("Output-1444280365", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1444280365" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1444280365">
+Open Browser</br><br/>
+Click on Accept Cookie button.</br><br/>
+Mouse hovered on About tab.</br><br/>
+Click on the Partners menu under the About tab successfully.</br><br/>
+Click on the Become a Partner button under the banner section successfully.</br><br/>
+<a href='../test-output/screenshots/finalScreenshot_20260313095518827.png' target='new'><img src='../test-output/screenshots/finalScreenshot_20260313095518827.png' width='200' height='100'/></a></br><br/>
+<Strong><b>Sisense Testing is failed.</b></font></strong></br><br/>
+</div>
+</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on windows (71726e332772964a95c93da801b7cb2a)] -&gt; xpath: //h2[text()=&apos;Become a Partner&apos;]//following::input[@id=&apos;Email&apos;]] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.160, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\JANKI\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50928}, goog:processID: 53176, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50928/devtoo..., se:cdpVersion: 145.0.7632.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: ignore, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 71726e332772964a95c93da801b7cb2a
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.kfast.init.Common.waitForElementToBeVisible(Common.java:912)
+	at com.sisense.about.PartnersPage.fillUpBecomeAPartnerForm(PartnersPage.java:117)
+	at com.sisense.about.PartnersTest.verifyFillFormBecomeaPartnerFunctionality(PartnersTest.java:25)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1444280365", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1444280365'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on windows (71726e332772964a95c93da801b7cb2a)] -&gt; xpath: //h2[text()=&apos;Become a Partner&apos;]//following::input[@id=&apos;Email&apos;]] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 145.0.7632.160, chrome: {chromedriverVersion: 145.0.7632.117 (de4e5d6e13b..., userDataDir: C:\Users\JANKI\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50928}, goog:processID: 53176, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50928/devtoo..., se:cdpVersion: 145.0.7632.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: ignore, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 71726e332772964a95c93da801b7cb2a
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.kfast.init.Common.waitForElementToBeVisible(Common.java:912)
+	at com.sisense.about.PartnersPage.fillUpBecomeAPartnerForm(PartnersPage.java:117)
+	at com.sisense.about.PartnersTest.verifyFillFormBecomeaPartnerFunctionality(PartnersTest.java:25)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:819)
+	at org.testng.TestRunner.run(TestRunner.java:619)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+	at org.testng.TestNG.runSuites(TestNG.java:1134)
+	at org.testng.TestNG.run(TestNG.java:1101)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+</pre></div></td>
+<td>49</td>
+<td>com.sisense.about.PartnersTest@b7c4869</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,31 +157,29 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.sisense.about.CompanyTest.verifyDemoPageTitleUnderHeaderSection()'><b>verifyDemoPageTitleUnderHeaderSection</b><br>Test class: com.sisense.about.CompanyTest<br/>
-<a href="#Output-2062667890" onClick='toggleBox("Output-2062667890", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.sisense.about.AboutTest.verifyBookaliveDemoPageTitleUnderFooterSection()'><b>verifyBookaliveDemoPageTitleUnderFooterSection</b><br>Test class: com.sisense.about.AboutTest<br/>
+<a href="#Output-154146418" onClick='toggleBox("Output-154146418", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-2062667890" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-2062667890">
+<a href="#Output-154146418" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-154146418">
 Open Browser</br><br/>
 Click on Accept Cookie button.</br><br/>
-Mouse hovered on About tab.</br><br/>
-Click on Company Menu under About tab successfully.</br><br/>
-Click on the Demo button.</br><br/>
-Page title: Request a Demo - See Sisense Transform Your Data Analytics</br><br/>
-Url : https://www.sisense.com/demo/</br><br/>
+Click on the About tab.</br><br/>
+Scroll to Footer section.</br><br/>
+Click on Book a Live Demo button under Footer successfully.</br><br/>
 Sisense Demo page title matched successfully.</br><br/>
 <Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
 </div>
 </td>
 <td></td>
-<td>23</td>
-<td>com.sisense.about.CompanyTest@2e48362c</td></tr>
+<td>21</td>
+<td>com.sisense.about.AboutTest@5460cf3a</td></tr>
 <tr>
 <td title='com.sisense.about.PartnersTest.verifyPartnersPageTitleUnderAboutTab()'><b>verifyPartnersPageTitleUnderAboutTab</b><br>Test class: com.sisense.about.PartnersTest<br/>
-<a href="#Output-2094132308" onClick='toggleBox("Output-2094132308", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-488795943" onClick='toggleBox("Output-488795943", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-2094132308" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-2094132308">
+<a href="#Output-488795943" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-488795943">
 Open Browser</br><br/>
 Click on Accept Cookie button.</br><br/>
 Mouse hovered on About tab.</br><br/>
@@ -110,154 +189,14 @@ Sisense Partners page title matched successfully.</br><br/>
 </div>
 </td>
 <td></td>
-<td>21</td>
-<td>com.sisense.about.PartnersTest@1efe439d</td></tr>
-<tr>
-<td title='com.sisense.about.PartnersTest.verifyTermsOfServicePageTitleUnderFormSection()'><b>verifyTermsOfServicePageTitleUnderFormSection</b><br>Test class: com.sisense.about.PartnersTest<br/>
-<a href="#Output-1722351469" onClick='toggleBox("Output-1722351469", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1722351469" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1722351469">
-Open Browser</br><br/>
-Click on Accept Cookie button.</br><br/>
-Mouse hovered on About tab.</br><br/>
-Click on the Partners menu under the About tab successfully.</br><br/>
-Click on the Terms of Service link under the form section.</br><br/>
-Terms of Service page title matched successfully.</br><br/>
-<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
-</div>
-</td>
-<td></td>
-<td>27</td>
-<td>com.sisense.about.PartnersTest@1efe439d</td></tr>
-<tr>
-<td title='com.sisense.about.NewsroomTest.verifyPressReleasesDemoPageTitleUnderHeaderSection()'><b>verifyPressReleasesDemoPageTitleUnderHeaderSection</b><br>Test class: com.sisense.about.NewsroomTest<br/>
-<a href="#Output-1750417042" onClick='toggleBox("Output-1750417042", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1750417042" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1750417042">
-Open Browser</br><br/>
-Click on Accept Cookie button.</br><br/>
-Mouse hovered on About tab.</br><br/>
-Click on Newsroom menu successfully.</br><br/>
-Click on Press Releases link successfully.</br><br/>
-Click on the Demo button.</br><br/>
-Page title: Request a Demo - See Sisense Transform Your Data Analytics</br><br/>
-Url : https://www.sisense.com/demo/</br><br/>
-Sisense Demo page title matched successfully.</br><br/>
-<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
-</div>
-</td>
-<td></td>
-<td>23</td>
-<td>com.sisense.about.NewsroomTest@be68757</td></tr>
-<tr>
-<td title='com.sisense.about.NewsroomTest.verifyPressReleasesBookaliveDemoPageTitleUnderFooterSection()'><b>verifyPressReleasesBookaliveDemoPageTitleUnderFooterSection</b><br>Test class: com.sisense.about.NewsroomTest<br/>
-<a href="#Output-1492955259" onClick='toggleBox("Output-1492955259", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1492955259" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1492955259">
-Open Browser</br><br/>
-Click on Accept Cookie button.</br><br/>
-Mouse hovered on About tab.</br><br/>
-Click on Newsroom menu successfully.</br><br/>
-Click on Press Releases link successfully.</br><br/>
-Scroll to Footer section.</br><br/>
-Click on Book a Live Demo button under Footer successfully.</br><br/>
-Sisense Demo page title matched successfully.</br><br/>
-<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
-</div>
-</td>
-<td></td>
-<td>35</td>
-<td>com.sisense.about.NewsroomTest@be68757</td></tr>
-<tr>
-<td title='com.sisense.about.CompanyTest.verifyAboutOurInvestorsLinkPageTitleUnderOurInvestorsSection()'><b>verifyAboutOurInvestorsLinkPageTitleUnderOurInvestorsSection</b><br>Test class: com.sisense.about.CompanyTest<br/>
-<a href="#Output-1392027380" onClick='toggleBox("Output-1392027380", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1392027380" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1392027380">
-Open Browser</br><br/>
-Click on Accept Cookie button.</br><br/>
-Mouse hovered on About tab.</br><br/>
-Click on Company Menu under About tab successfully.</br><br/>
-Click on About Our Investors link under Our Investors section successfully.</br><br/>
-Sisense About Our Investors page title matched successfully.</br><br/>
-<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
-</div>
-</td>
-<td></td>
-<td>21</td>
-<td>com.sisense.about.CompanyTest@2e48362c</td></tr>
-<tr>
-<td title='com.sisense.about.NewsroomTest.verifyNewsroomPageTitleUnderAboutTab()'><b>verifyNewsroomPageTitleUnderAboutTab</b><br>Test class: com.sisense.about.NewsroomTest<br/>
-<a href="#Output-372366268" onClick='toggleBox("Output-372366268", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-372366268" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-372366268">
-Open Browser</br><br/>
-Click on Accept Cookie button.</br><br/>
-Mouse hovered on About tab.</br><br/>
-Click on Newsroom menu successfully.</br><br/>
-Sisense Newsroom Page Title matched successfully.</br><br/>
-<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
-</div>
-</td>
-<td></td>
-<td>20</td>
-<td>com.sisense.about.NewsroomTest@be68757</td></tr>
-<tr>
-<td title='com.sisense.about.NewsroomTest.verifyPressReleasesPrivacyPolicyPageTitleUnderFormSection()'><b>verifyPressReleasesPrivacyPolicyPageTitleUnderFormSection</b><br>Test class: com.sisense.about.NewsroomTest<br/>
-<a href="#Output-1412095226" onClick='toggleBox("Output-1412095226", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1412095226" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1412095226">
-Open Browser</br><br/>
-Click on Accept Cookie button.</br><br/>
-Mouse hovered on About tab.</br><br/>
-Click on Newsroom menu successfully.</br><br/>
-Click on Press Releases link successfully.</br><br/>
-Click on Privacy Policy link.</br><br/>
-Privacy Policy Page Title matched successfully.</br><br/>
-<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
-</div>
-</td>
-<td></td>
-<td>22</td>
-<td>com.sisense.about.NewsroomTest@be68757</td></tr>
-<tr>
-<td title='com.sisense.about.PartnersTest.verifyFillFormBecomeaPartnerFunctionality()'><b>verifyFillFormBecomeaPartnerFunctionality</b><br>Test class: com.sisense.about.PartnersTest<br/>
-<a href="#Output-1754096028" onClick='toggleBox("Output-1754096028", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1754096028" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1754096028">
-Open Browser</br><br/>
-Click on Accept Cookie button.</br><br/>
-Mouse hovered on About tab.</br><br/>
-Click on the Partners menu under the About tab successfully.</br><br/>
-Click on the Become a Partner button under the banner section successfully.</br><br/>
-Input Email ID: madhavi.sriramaneni@kiwiqa.com</br><br/>
-Input First Name : Madhavi</br><br/>
-Input Last Name : Sriramaneni</br><br/>
-Input Phone Number : 9998886667</br><br/>
-Input Company Name : KiwiQA</br><br/>
-Input Job Title : QA</br><br/>
-Input Partner Type : Partner - Platform</br><br/>
-Input Comments : Testing</br><br/>
-Click on the Submit button under the form.</br><br/>
-The Become a Partner form was submitted successfully.</br><br/>
-<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
-</div>
-</td>
-<td></td>
-<td>32</td>
-<td>com.sisense.about.PartnersTest@1efe439d</td></tr>
+<td>19</td>
+<td>com.sisense.about.PartnersTest@b7c4869</td></tr>
 <tr>
 <td title='com.sisense.about.NewsroomTest.verifyFillFormFunctionality()'><b>verifyFillFormFunctionality</b><br>Test class: com.sisense.about.NewsroomTest<br/>
-<a href="#Output-747984007" onClick='toggleBox("Output-747984007", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-1234453970" onClick='toggleBox("Output-1234453970", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-747984007" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-747984007">
+<a href="#Output-1234453970" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1234453970">
 Open Browser</br><br/>
 Click on Accept Cookie button.</br><br/>
 Mouse hovered on About tab.</br><br/>
@@ -273,14 +212,458 @@ Form submitted successfully.</br><br/>
 </div>
 </td>
 <td></td>
-<td>26</td>
-<td>com.sisense.about.NewsroomTest@be68757</td></tr>
+<td>22</td>
+<td>com.sisense.about.NewsroomTest@740d2e78</td></tr>
+<tr>
+<td title='com.sisense.about.CompanyTest.verifyBookaliveDemoPageTitleUnderFooterSection()'><b>verifyBookaliveDemoPageTitleUnderFooterSection</b><br>Test class: com.sisense.about.CompanyTest<br/>
+<a href="#Output-603327357" onClick='toggleBox("Output-603327357", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-603327357" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-603327357">
+Open Browser</br><br/>
+Click on Accept Cookie button.</br><br/>
+Mouse hovered on About tab.</br><br/>
+Click on Company Menu under About tab successfully.</br><br/>
+Scroll to Footer section.</br><br/>
+Click on Book a Live Demo button under Footer successfully.</br><br/>
+Sisense Demo page title matched successfully.</br><br/>
+<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
+</div>
+</td>
+<td></td>
+<td>19</td>
+<td>com.sisense.about.CompanyTest@7e4204e2</td></tr>
+<tr>
+<td title='com.sisense.about.NewsroomTest.verifyPressReleasesFillFormFunctionality()'><b>verifyPressReleasesFillFormFunctionality</b><br>Test class: com.sisense.about.NewsroomTest<br/>
+<a href="#Output-371613997" onClick='toggleBox("Output-371613997", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-371613997" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-371613997">
+Open Browser</br><br/>
+Click on Accept Cookie button.</br><br/>
+Mouse hovered on About tab.</br><br/>
+Click on Newsroom menu successfully.</br><br/>
+Click on Press Releases link successfully.</br><br/>
+Scroll to Email label.</br><br/>
+Input Email ID: madhavi.sriramaneni@kiwiqa.com</br><br/>
+Input First Name : Madhavi</br><br/>
+Input Last Name : Sriramaneni</br><br/>
+Input Company Name : KiwiQA</br><br/>
+Click on Sign Up Button under Form successfully.</br><br/>
+Form submitted successfully.</br><br/>
+<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
+</div>
+</td>
+<td></td>
+<td>23</td>
+<td>com.sisense.about.NewsroomTest@740d2e78</td></tr>
+<tr>
+<td title='com.sisense.about.CompanyTest.verifyCompanyPageTitleUnderAboutTab()'><b>verifyCompanyPageTitleUnderAboutTab</b><br>Test class: com.sisense.about.CompanyTest<br/>
+<a href="#Output-1434151479" onClick='toggleBox("Output-1434151479", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1434151479" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1434151479">
+Open Browser</br><br/>
+Click on Accept Cookie button.</br><br/>
+Mouse hovered on About tab.</br><br/>
+Click on Company Menu under About tab successfully.</br><br/>
+Sisense About page title matched successfully.</br><br/>
+<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
+</div>
+</td>
+<td></td>
+<td>19</td>
+<td>com.sisense.about.CompanyTest@7e4204e2</td></tr>
+<tr>
+<td title='com.sisense.about.AboutTest.verifyExploreCareersAtSisensePageTitleUnderOurCultureAndCareersSection()'><b>verifyExploreCareersAtSisensePageTitleUnderOurCultureAndCareersSection</b><br>Test class: com.sisense.about.AboutTest<br/>
+<a href="#Output-1866340787" onClick='toggleBox("Output-1866340787", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1866340787" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1866340787">
+Open Browser</br><br/>
+Click on Accept Cookie button.</br><br/>
+Click on the About tab.</br><br/>
+Click on Explore Careers at Sisense button under Our Culture and Careers section successfully.</br><br/>
+Careers Page Title matched successfully.</br><br/>
+<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
+</div>
+</td>
+<td></td>
+<td>22</td>
+<td>com.sisense.about.AboutTest@5460cf3a</td></tr>
+<tr>
+<td title='com.sisense.about.CompanyTest.verifyExplorecareersatSisensePageTitleUnderOurCultureAndCareersSection()'><b>verifyExplorecareersatSisensePageTitleUnderOurCultureAndCareersSection</b><br>Test class: com.sisense.about.CompanyTest<br/>
+<a href="#Output-1742798189" onClick='toggleBox("Output-1742798189", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1742798189" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1742798189">
+Open Browser</br><br/>
+Click on Accept Cookie button.</br><br/>
+Mouse hovered on About tab.</br><br/>
+Click on Company Menu under About tab successfully.</br><br/>
+Click on Explore Careers at Sisense button under Our Culture and Careers section successfully.</br><br/>
+Careers Page Title matched successfully.</br><br/>
+<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
+</div>
+</td>
+<td></td>
+<td>22</td>
+<td>com.sisense.about.CompanyTest@7e4204e2</td></tr>
+<tr>
+<td title='com.sisense.about.PartnersTest.verifyHomeBreadcrumbTitleUnderPartnersPage()'><b>verifyHomeBreadcrumbTitleUnderPartnersPage</b><br>Test class: com.sisense.about.PartnersTest<br/>
+<a href="#Output-975941670" onClick='toggleBox("Output-975941670", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-975941670" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-975941670">
+Open Browser</br><br/>
+Click on Accept Cookie button.</br><br/>
+Mouse hovered on About tab.</br><br/>
+Click on the Partners menu under the About tab successfully.</br><br/>
+Click on Home breadcrumb.</br><br/>
+Sisense Home Page title matched successfully.</br><br/>
+<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
+</div>
+</td>
+<td></td>
+<td>19</td>
+<td>com.sisense.about.PartnersTest@b7c4869</td></tr>
+<tr>
+<td title='com.sisense.about.PartnersTest.verifyBookaliveDemoPageTitleUnderFooterSection()'><b>verifyBookaliveDemoPageTitleUnderFooterSection</b><br>Test class: com.sisense.about.PartnersTest<br/>
+<a href="#Output-1632981528" onClick='toggleBox("Output-1632981528", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1632981528" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1632981528">
+Open Browser</br><br/>
+Click on Accept Cookie button.</br><br/>
+Mouse hovered on About tab.</br><br/>
+Click on the Partners menu under the About tab successfully.</br><br/>
+Scroll to Footer section.</br><br/>
+Click on Book a Live Demo button under Footer successfully.</br><br/>
+Sisense Demo page title matched successfully.</br><br/>
+<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
+</div>
+</td>
+<td></td>
+<td>20</td>
+<td>com.sisense.about.PartnersTest@b7c4869</td></tr>
+<tr>
+<td title='com.sisense.about.NewsroomTest.verifyBookaliveDemoPageTitleUnderFooterSection()'><b>verifyBookaliveDemoPageTitleUnderFooterSection</b><br>Test class: com.sisense.about.NewsroomTest<br/>
+<a href="#Output-709531076" onClick='toggleBox("Output-709531076", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-709531076" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-709531076">
+Open Browser</br><br/>
+Click on Accept Cookie button.</br><br/>
+Mouse hovered on About tab.</br><br/>
+Click on Newsroom menu successfully.</br><br/>
+Scroll to Footer section.</br><br/>
+Click on Book a Live Demo button under Footer successfully.</br><br/>
+Sisense Demo page title matched successfully.</br><br/>
+<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
+</div>
+</td>
+<td></td>
+<td>20</td>
+<td>com.sisense.about.NewsroomTest@740d2e78</td></tr>
+<tr>
+<td title='com.sisense.about.CompanyTest.verifyAboutOurInvestorsLinkPageTitleUnderOurInvestorsSection()'><b>verifyAboutOurInvestorsLinkPageTitleUnderOurInvestorsSection</b><br>Test class: com.sisense.about.CompanyTest<br/>
+<a href="#Output-1864344016" onClick='toggleBox("Output-1864344016", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1864344016" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1864344016">
+Open Browser</br><br/>
+Click on Accept Cookie button.</br><br/>
+Mouse hovered on About tab.</br><br/>
+Click on Company Menu under About tab successfully.</br><br/>
+Click on About Our Investors link under Our Investors section successfully.</br><br/>
+Sisense About Our Investors page title matched successfully.</br><br/>
+<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
+</div>
+</td>
+<td></td>
+<td>22</td>
+<td>com.sisense.about.CompanyTest@7e4204e2</td></tr>
+<tr>
+<td title='com.sisense.about.PartnersTest.verifyDemoPageTitleUnderHeaderSection()'><b>verifyDemoPageTitleUnderHeaderSection</b><br>Test class: com.sisense.about.PartnersTest<br/>
+<a href="#Output-803441523" onClick='toggleBox("Output-803441523", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-803441523" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-803441523">
+Open Browser</br><br/>
+Click on Accept Cookie button.</br><br/>
+Mouse hovered on About tab.</br><br/>
+Click on the Partners menu under the About tab successfully.</br><br/>
+Click on the Demo button.</br><br/>
+Page title: Request a Demo - See Sisense Transform Your Data Analytics</br><br/>
+Url : https://www.sisense.com/demo/</br><br/>
+Sisense Demo page title matched successfully.</br><br/>
+<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
+</div>
+</td>
+<td></td>
+<td>19</td>
+<td>com.sisense.about.PartnersTest@b7c4869</td></tr>
+<tr>
+<td title='com.sisense.about.AboutTest.verifyHomeBreadcrumbTitleUnderAboutPage()'><b>verifyHomeBreadcrumbTitleUnderAboutPage</b><br>Test class: com.sisense.about.AboutTest<br/>
+<a href="#Output-239648666" onClick='toggleBox("Output-239648666", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-239648666" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-239648666">
+Open Browser</br><br/>
+Click on Accept Cookie button.</br><br/>
+Click on the About tab.</br><br/>
+Click on Home breadcrumb.</br><br/>
+Sisense Home Page title matched successfully.</br><br/>
+<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
+</div>
+</td>
+<td></td>
+<td>18</td>
+<td>com.sisense.about.AboutTest@5460cf3a</td></tr>
+<tr>
+<td title='com.sisense.about.NewsroomTest.verifyPressReleasesPageTitleUnderNewsroomPage()'><b>verifyPressReleasesPageTitleUnderNewsroomPage</b><br>Test class: com.sisense.about.NewsroomTest<br/>
+<a href="#Output-594260600" onClick='toggleBox("Output-594260600", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-594260600" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-594260600">
+Open Browser</br><br/>
+Click on Accept Cookie button.</br><br/>
+Mouse hovered on About tab.</br><br/>
+Click on Newsroom menu successfully.</br><br/>
+Click on Press Releases link successfully.</br><br/>
+Sisense Newsroom Page Title matched successfully.</br><br/>
+<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
+</div>
+</td>
+<td></td>
+<td>21</td>
+<td>com.sisense.about.NewsroomTest@740d2e78</td></tr>
+<tr>
+<td title='com.sisense.about.CompanyTest.verifyDemoPageTitleUnderHeaderSection()'><b>verifyDemoPageTitleUnderHeaderSection</b><br>Test class: com.sisense.about.CompanyTest<br/>
+<a href="#Output-1505006316" onClick='toggleBox("Output-1505006316", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1505006316" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1505006316">
+Open Browser</br><br/>
+Click on Accept Cookie button.</br><br/>
+Mouse hovered on About tab.</br><br/>
+Click on Company Menu under About tab successfully.</br><br/>
+Click on the Demo button.</br><br/>
+Page title: Request a Demo - See Sisense Transform Your Data Analytics</br><br/>
+Url : https://www.sisense.com/demo/</br><br/>
+Sisense Demo page title matched successfully.</br><br/>
+<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
+</div>
+</td>
+<td></td>
+<td>20</td>
+<td>com.sisense.about.CompanyTest@7e4204e2</td></tr>
+<tr>
+<td title='com.sisense.about.PartnersTest.verifyTermsOfServicePageTitleUnderFormSection()'><b>verifyTermsOfServicePageTitleUnderFormSection</b><br>Test class: com.sisense.about.PartnersTest<br/>
+<a href="#Output-584883526" onClick='toggleBox("Output-584883526", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-584883526" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-584883526">
+Open Browser</br><br/>
+Click on Accept Cookie button.</br><br/>
+Mouse hovered on About tab.</br><br/>
+Click on the Partners menu under the About tab successfully.</br><br/>
+Click on the Terms of Service link under the form section.</br><br/>
+Terms of Service page title matched successfully.</br><br/>
+<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
+</div>
+</td>
+<td></td>
+<td>22</td>
+<td>com.sisense.about.PartnersTest@b7c4869</td></tr>
+<tr>
+<td title='com.sisense.about.NewsroomTest.verifyPressReleasesHomeBreadcrumbTitleUnderPressReleasesPage()'><b>verifyPressReleasesHomeBreadcrumbTitleUnderPressReleasesPage</b><br>Test class: com.sisense.about.NewsroomTest<br/>
+<a href="#Output-253648773" onClick='toggleBox("Output-253648773", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-253648773" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-253648773">
+Open Browser</br><br/>
+Click on Accept Cookie button.</br><br/>
+Mouse hovered on About tab.</br><br/>
+Click on Newsroom menu successfully.</br><br/>
+Click on Press Releases link successfully.</br><br/>
+Click on Home breadcrumb.</br><br/>
+Sisense Home Page title matched successfully.</br><br/>
+<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
+</div>
+</td>
+<td></td>
+<td>20</td>
+<td>com.sisense.about.NewsroomTest@740d2e78</td></tr>
+<tr>
+<td title='com.sisense.about.NewsroomTest.verifyHomeBreadcrumbTitleUnderNewsroomPage()'><b>verifyHomeBreadcrumbTitleUnderNewsroomPage</b><br>Test class: com.sisense.about.NewsroomTest<br/>
+<a href="#Output-46719126" onClick='toggleBox("Output-46719126", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-46719126" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-46719126">
+Open Browser</br><br/>
+Click on Accept Cookie button.</br><br/>
+Mouse hovered on About tab.</br><br/>
+Click on Newsroom menu successfully.</br><br/>
+Click on Home breadcrumb.</br><br/>
+Sisense Home Page title matched successfully.</br><br/>
+<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
+</div>
+</td>
+<td></td>
+<td>21</td>
+<td>com.sisense.about.NewsroomTest@740d2e78</td></tr>
+<tr>
+<td title='com.sisense.about.NewsroomTest.verifyNewsroomPageTitleUnderAboutTab()'><b>verifyNewsroomPageTitleUnderAboutTab</b><br>Test class: com.sisense.about.NewsroomTest<br/>
+<a href="#Output-1992162329" onClick='toggleBox("Output-1992162329", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1992162329" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1992162329">
+Open Browser</br><br/>
+Click on Accept Cookie button.</br><br/>
+Mouse hovered on About tab.</br><br/>
+Click on Newsroom menu successfully.</br><br/>
+Sisense Newsroom Page Title matched successfully.</br><br/>
+<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
+</div>
+</td>
+<td></td>
+<td>19</td>
+<td>com.sisense.about.NewsroomTest@740d2e78</td></tr>
+<tr>
+<td title='com.sisense.about.PartnersTest.verifyPrivacyPolicyPageTitleUnderFormSection()'><b>verifyPrivacyPolicyPageTitleUnderFormSection</b><br>Test class: com.sisense.about.PartnersTest<br/>
+<a href="#Output-1409497701" onClick='toggleBox("Output-1409497701", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1409497701" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1409497701">
+Open Browser</br><br/>
+Click on Accept Cookie button.</br><br/>
+Mouse hovered on About tab.</br><br/>
+Click on the Partners menu under the About tab successfully.</br><br/>
+Click on the Privacy Policy link under the form section.</br><br/>
+Privacy Policy page title matched successfully.</br><br/>
+<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
+</div>
+</td>
+<td></td>
+<td>24</td>
+<td>com.sisense.about.PartnersTest@b7c4869</td></tr>
+<tr>
+<td title='com.sisense.about.NewsroomTest.verifyPrivacyPolicyPageTitleUnderForm()'><b>verifyPrivacyPolicyPageTitleUnderForm</b><br>Test class: com.sisense.about.NewsroomTest<br/>
+<a href="#Output-1617253954" onClick='toggleBox("Output-1617253954", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1617253954" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1617253954">
+Open Browser</br><br/>
+Click on Accept Cookie button.</br><br/>
+Mouse hovered on About tab.</br><br/>
+Click on Newsroom menu successfully.</br><br/>
+Click on Privacy Policy link.</br><br/>
+Privacy Policy Page Title matched successfully.</br><br/>
+<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
+</div>
+</td>
+<td></td>
+<td>22</td>
+<td>com.sisense.about.NewsroomTest@740d2e78</td></tr>
+<tr>
+<td title='com.sisense.about.PartnersTest.verifyViewAllPartnersPageTitleUnderBannerSection()'><b>verifyViewAllPartnersPageTitleUnderBannerSection</b><br>Test class: com.sisense.about.PartnersTest<br/>
+<a href="#Output-1514901029" onClick='toggleBox("Output-1514901029", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1514901029" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1514901029">
+Open Browser</br><br/>
+Click on Accept Cookie button.</br><br/>
+Mouse hovered on About tab.</br><br/>
+Click on the Partners menu under the About tab successfully.</br><br/>
+Click on the View All Partners button under the banner.</br><br/>
+Sisense View All Partners page title matched successfully.</br><br/>
+<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
+</div>
+</td>
+<td></td>
+<td>20</td>
+<td>com.sisense.about.PartnersTest@b7c4869</td></tr>
+<tr>
+<td title='com.sisense.about.NewsroomTest.verifyPressReleasesPrivacyPolicyPageTitleUnderFormSection()'><b>verifyPressReleasesPrivacyPolicyPageTitleUnderFormSection</b><br>Test class: com.sisense.about.NewsroomTest<br/>
+<a href="#Output-1327562638" onClick='toggleBox("Output-1327562638", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1327562638" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1327562638">
+Open Browser</br><br/>
+Click on Accept Cookie button.</br><br/>
+Mouse hovered on About tab.</br><br/>
+Click on Newsroom menu successfully.</br><br/>
+Click on Press Releases link successfully.</br><br/>
+Click on Privacy Policy link.</br><br/>
+Privacy Policy Page Title matched successfully.</br><br/>
+<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
+</div>
+</td>
+<td></td>
+<td>23</td>
+<td>com.sisense.about.NewsroomTest@740d2e78</td></tr>
+<tr>
+<td title='com.sisense.about.NewsroomTest.verifyTermsOfServicePageTitleUnderAboutTab()'><b>verifyTermsOfServicePageTitleUnderAboutTab</b><br>Test class: com.sisense.about.NewsroomTest<br/>
+<a href="#Output-2049463320" onClick='toggleBox("Output-2049463320", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2049463320" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2049463320">
+Open Browser</br><br/>
+Click on Accept Cookie button.</br><br/>
+Mouse hovered on About tab.</br><br/>
+Click on Newsroom menu successfully.</br><br/>
+Click on Terms of Service link.</br><br/>
+Terms of Service Page Title matched successfully.</br><br/>
+<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
+</div>
+</td>
+<td></td>
+<td>22</td>
+<td>com.sisense.about.NewsroomTest@740d2e78</td></tr>
+<tr>
+<td title='com.sisense.about.CompanyTest.verifyHomeBreadcrumbTitleUnderCompanyPage()'><b>verifyHomeBreadcrumbTitleUnderCompanyPage</b><br>Test class: com.sisense.about.CompanyTest<br/>
+<a href="#Output-503427379" onClick='toggleBox("Output-503427379", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-503427379" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-503427379">
+Open Browser</br><br/>
+Click on Accept Cookie button.</br><br/>
+Mouse hovered on About tab.</br><br/>
+Click on Company Menu under About tab successfully.</br><br/>
+Click on Home breadcrumb.</br><br/>
+Sisense Home Page title matched successfully.</br><br/>
+<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
+</div>
+</td>
+<td></td>
+<td>19</td>
+<td>com.sisense.about.CompanyTest@7e4204e2</td></tr>
+<tr>
+<td title='com.sisense.about.AboutTest.verifyDemoPageTitleUnderHeaderSection()'><b>verifyDemoPageTitleUnderHeaderSection</b><br>Test class: com.sisense.about.AboutTest<br/>
+<a href="#Output-541769471" onClick='toggleBox("Output-541769471", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-541769471" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-541769471">
+Open Browser</br><br/>
+Click on Accept Cookie button.</br><br/>
+Click on the About tab.</br><br/>
+Click on the Demo button.</br><br/>
+Page title: Request a Demo - See Sisense Transform Your Data Analytics</br><br/>
+Url : https://www.sisense.com/demo/</br><br/>
+Sisense Demo page title matched successfully.</br><br/>
+<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
+</div>
+</td>
+<td></td>
+<td>21</td>
+<td>com.sisense.about.AboutTest@5460cf3a</td></tr>
 <tr>
 <td title='com.sisense.about.NewsroomTest.verifyPressReleasesTermsOfServicePageTitleUnderFormSection()'><b>verifyPressReleasesTermsOfServicePageTitleUnderFormSection</b><br>Test class: com.sisense.about.NewsroomTest<br/>
-<a href="#Output-2126157357" onClick='toggleBox("Output-2126157357", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-199934876" onClick='toggleBox("Output-199934876", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-2126157357" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-2126157357">
+<a href="#Output-199934876" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-199934876">
 Open Browser</br><br/>
 Click on Accept Cookie button.</br><br/>
 Mouse hovered on About tab.</br><br/>
@@ -292,31 +675,14 @@ Terms of Service Page Title matched successfully.</br><br/>
 </div>
 </td>
 <td></td>
-<td>26</td>
-<td>com.sisense.about.NewsroomTest@be68757</td></tr>
-<tr>
-<td title='com.sisense.about.AboutTest.verifyExploreCareersAtSisensePageTitleUnderOurCultureAndCareersSection()'><b>verifyExploreCareersAtSisensePageTitleUnderOurCultureAndCareersSection</b><br>Test class: com.sisense.about.AboutTest<br/>
-<a href="#Output-406180845" onClick='toggleBox("Output-406180845", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-406180845" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-406180845">
-Open Browser</br><br/>
-Click on Accept Cookie button.</br><br/>
-Click on the About tab.</br><br/>
-Click on Explore Careers at Sisense button under Our Culture and Careers section successfully.</br><br/>
-Careers Page Title matched successfully.</br><br/>
-<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
-</div>
-</td>
-<td></td>
-<td>22</td>
-<td>com.sisense.about.AboutTest@3697186</td></tr>
+<td>24</td>
+<td>com.sisense.about.NewsroomTest@740d2e78</td></tr>
 <tr>
 <td title='com.sisense.about.PartnersTest.verifyFillFormFunctionality()'><b>verifyFillFormFunctionality</b><br>Test class: com.sisense.about.PartnersTest<br/>
-<a href="#Output-1798539562" onClick='toggleBox("Output-1798539562", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-1355829607" onClick='toggleBox("Output-1355829607", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1798539562" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1798539562">
+<a href="#Output-1355829607" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1355829607">
 Open Browser</br><br/>
 Click on Accept Cookie button.</br><br/>
 Mouse hovered on About tab.</br><br/>
@@ -332,18 +698,19 @@ Footer form was submitted successfully.</br><br/>
 </div>
 </td>
 <td></td>
-<td>26</td>
-<td>com.sisense.about.PartnersTest@1efe439d</td></tr>
+<td>21</td>
+<td>com.sisense.about.PartnersTest@b7c4869</td></tr>
 <tr>
-<td title='com.sisense.about.PartnersTest.verifyDemoPageTitleUnderHeaderSection()'><b>verifyDemoPageTitleUnderHeaderSection</b><br>Test class: com.sisense.about.PartnersTest<br/>
-<a href="#Output-1187125406" onClick='toggleBox("Output-1187125406", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.sisense.about.NewsroomTest.verifyPressReleasesDemoPageTitleUnderHeaderSection()'><b>verifyPressReleasesDemoPageTitleUnderHeaderSection</b><br>Test class: com.sisense.about.NewsroomTest<br/>
+<a href="#Output-322860937" onClick='toggleBox("Output-322860937", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1187125406" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1187125406">
+<a href="#Output-322860937" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-322860937">
 Open Browser</br><br/>
 Click on Accept Cookie button.</br><br/>
 Mouse hovered on About tab.</br><br/>
-Click on the Partners menu under the About tab successfully.</br><br/>
+Click on Newsroom menu successfully.</br><br/>
+Click on Press Releases link successfully.</br><br/>
 Click on the Demo button.</br><br/>
 Page title: Request a Demo - See Sisense Transform Your Data Analytics</br><br/>
 Url : https://www.sisense.com/demo/</br><br/>
@@ -352,310 +719,14 @@ Sisense Demo page title matched successfully.</br><br/>
 </div>
 </td>
 <td></td>
-<td>22</td>
-<td>com.sisense.about.PartnersTest@1efe439d</td></tr>
-<tr>
-<td title='com.sisense.about.NewsroomTest.verifyPrivacyPolicyPageTitleUnderForm()'><b>verifyPrivacyPolicyPageTitleUnderForm</b><br>Test class: com.sisense.about.NewsroomTest<br/>
-<a href="#Output-629314014" onClick='toggleBox("Output-629314014", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-629314014" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-629314014">
-Open Browser</br><br/>
-Click on Accept Cookie button.</br><br/>
-Mouse hovered on About tab.</br><br/>
-Click on Newsroom menu successfully.</br><br/>
-Click on Privacy Policy link.</br><br/>
-Privacy Policy Page Title matched successfully.</br><br/>
-<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
-</div>
-</td>
-<td></td>
-<td>24</td>
-<td>com.sisense.about.NewsroomTest@be68757</td></tr>
-<tr>
-<td title='com.sisense.about.PartnersTest.verifyBookaliveDemoPageTitleUnderFooterSection()'><b>verifyBookaliveDemoPageTitleUnderFooterSection</b><br>Test class: com.sisense.about.PartnersTest<br/>
-<a href="#Output-733498021" onClick='toggleBox("Output-733498021", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-733498021" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-733498021">
-Open Browser</br><br/>
-Click on Accept Cookie button.</br><br/>
-Mouse hovered on About tab.</br><br/>
-Click on the Partners menu under the About tab successfully.</br><br/>
-Scroll to Footer section.</br><br/>
-Click on Book a Live Demo button under Footer successfully.</br><br/>
-Sisense Demo page title matched successfully.</br><br/>
-<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
-</div>
-</td>
-<td></td>
-<td>37</td>
-<td>com.sisense.about.PartnersTest@1efe439d</td></tr>
-<tr>
-<td title='com.sisense.about.PartnersTest.verifyViewAllPartnersPageTitleUnderBannerSection()'><b>verifyViewAllPartnersPageTitleUnderBannerSection</b><br>Test class: com.sisense.about.PartnersTest<br/>
-<a href="#Output-959718932" onClick='toggleBox("Output-959718932", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-959718932" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-959718932">
-Open Browser</br><br/>
-Click on Accept Cookie button.</br><br/>
-Mouse hovered on About tab.</br><br/>
-Click on the Partners menu under the About tab successfully.</br><br/>
-Click on the View All Partners button under the banner.</br><br/>
-Sisense View All Partners page title matched successfully.</br><br/>
-<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
-</div>
-</td>
-<td></td>
-<td>22</td>
-<td>com.sisense.about.PartnersTest@1efe439d</td></tr>
-<tr>
-<td title='com.sisense.about.NewsroomTest.verifyPressReleasesFillFormFunctionality()'><b>verifyPressReleasesFillFormFunctionality</b><br>Test class: com.sisense.about.NewsroomTest<br/>
-<a href="#Output-2086207545" onClick='toggleBox("Output-2086207545", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-2086207545" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-2086207545">
-Open Browser</br><br/>
-Click on Accept Cookie button.</br><br/>
-Mouse hovered on About tab.</br><br/>
-Click on Newsroom menu successfully.</br><br/>
-Click on Press Releases link successfully.</br><br/>
-Scroll to Email label.</br><br/>
-Input Email ID: madhavi.sriramaneni@kiwiqa.com</br><br/>
-Input First Name : Madhavi</br><br/>
-Input Last Name : Sriramaneni</br><br/>
-Input Company Name : KiwiQA</br><br/>
-Click on Sign Up Button under Form successfully.</br><br/>
-Form submitted successfully.</br><br/>
-<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
-</div>
-</td>
-<td></td>
-<td>27</td>
-<td>com.sisense.about.NewsroomTest@be68757</td></tr>
-<tr>
-<td title='com.sisense.about.CompanyTest.verifyHomeBreadcrumbTitleUnderCompanyPage()'><b>verifyHomeBreadcrumbTitleUnderCompanyPage</b><br>Test class: com.sisense.about.CompanyTest<br/>
-<a href="#Output-354071225" onClick='toggleBox("Output-354071225", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-354071225" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-354071225">
-Open Browser</br><br/>
-Click on Accept Cookie button.</br><br/>
-Mouse hovered on About tab.</br><br/>
-Click on Company Menu under About tab successfully.</br><br/>
-Click on Home breadcrumb.</br><br/>
-Sisense Home Page title matched successfully.</br><br/>
-<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
-</div>
-</td>
-<td></td>
-<td>22</td>
-<td>com.sisense.about.CompanyTest@2e48362c</td></tr>
-<tr>
-<td title='com.sisense.about.CompanyTest.verifyBookaliveDemoPageTitleUnderFooterSection()'><b>verifyBookaliveDemoPageTitleUnderFooterSection</b><br>Test class: com.sisense.about.CompanyTest<br/>
-<a href="#Output-1051471498" onClick='toggleBox("Output-1051471498", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1051471498" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1051471498">
-Open Browser</br><br/>
-Click on Accept Cookie button.</br><br/>
-Mouse hovered on About tab.</br><br/>
-Click on Company Menu under About tab successfully.</br><br/>
-Scroll to Footer section.</br><br/>
-Click on Book a Live Demo button under Footer successfully.</br><br/>
-Sisense Demo page title matched successfully.</br><br/>
-<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
-</div>
-</td>
-<td></td>
-<td>37</td>
-<td>com.sisense.about.CompanyTest@2e48362c</td></tr>
-<tr>
-<td title='com.sisense.about.AboutTest.verifyHomeBreadcrumbTitleUnderAboutPage()'><b>verifyHomeBreadcrumbTitleUnderAboutPage</b><br>Test class: com.sisense.about.AboutTest<br/>
-<a href="#Output-169049466" onClick='toggleBox("Output-169049466", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-169049466" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-169049466">
-Open Browser</br><br/>
-Click on Accept Cookie button.</br><br/>
-Click on the About tab.</br><br/>
-Click on Home breadcrumb.</br><br/>
-Sisense Home Page title matched successfully.</br><br/>
-<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
-</div>
-</td>
-<td></td>
-<td>19</td>
-<td>com.sisense.about.AboutTest@3697186</td></tr>
-<tr>
-<td title='com.sisense.about.NewsroomTest.verifyHomeBreadcrumbTitleUnderNewsroomPage()'><b>verifyHomeBreadcrumbTitleUnderNewsroomPage</b><br>Test class: com.sisense.about.NewsroomTest<br/>
-<a href="#Output-1307963673" onClick='toggleBox("Output-1307963673", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1307963673" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1307963673">
-Open Browser</br><br/>
-Click on Accept Cookie button.</br><br/>
-Mouse hovered on About tab.</br><br/>
-Click on Newsroom menu successfully.</br><br/>
-Click on Home breadcrumb.</br><br/>
-Sisense Home Page title matched successfully.</br><br/>
-<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
-</div>
-</td>
-<td></td>
-<td>22</td>
-<td>com.sisense.about.NewsroomTest@be68757</td></tr>
-<tr>
-<td title='com.sisense.about.CompanyTest.verifyCompanyPageTitleUnderAboutTab()'><b>verifyCompanyPageTitleUnderAboutTab</b><br>Test class: com.sisense.about.CompanyTest<br/>
-<a href="#Output-2043889470" onClick='toggleBox("Output-2043889470", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-2043889470" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-2043889470">
-Open Browser</br><br/>
-Click on Accept Cookie button.</br><br/>
-Mouse hovered on About tab.</br><br/>
-Click on Company Menu under About tab successfully.</br><br/>
-Sisense About page title matched successfully.</br><br/>
-<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
-</div>
-</td>
-<td></td>
-<td>23</td>
-<td>com.sisense.about.CompanyTest@2e48362c</td></tr>
-<tr>
-<td title='com.sisense.about.NewsroomTest.verifyTermsOfServicePageTitleUnderAboutTab()'><b>verifyTermsOfServicePageTitleUnderAboutTab</b><br>Test class: com.sisense.about.NewsroomTest<br/>
-<a href="#Output-951057666" onClick='toggleBox("Output-951057666", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-951057666" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-951057666">
-Open Browser</br><br/>
-Click on Accept Cookie button.</br><br/>
-Mouse hovered on About tab.</br><br/>
-Click on Newsroom menu successfully.</br><br/>
-Click on Terms of Service link.</br><br/>
-Terms of Service Page Title matched successfully.</br><br/>
-<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
-</div>
-</td>
-<td></td>
-<td>24</td>
-<td>com.sisense.about.NewsroomTest@be68757</td></tr>
-<tr>
-<td title='com.sisense.about.NewsroomTest.verifyPressReleasesHomeBreadcrumbTitleUnderPressReleasesPage()'><b>verifyPressReleasesHomeBreadcrumbTitleUnderPressReleasesPage</b><br>Test class: com.sisense.about.NewsroomTest<br/>
-<a href="#Output-1699911101" onClick='toggleBox("Output-1699911101", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1699911101" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1699911101">
-Open Browser</br><br/>
-Click on Accept Cookie button.</br><br/>
-Mouse hovered on About tab.</br><br/>
-Click on Newsroom menu successfully.</br><br/>
-Click on Press Releases link successfully.</br><br/>
-Click on Home breadcrumb.</br><br/>
-Sisense Home Page title matched successfully.</br><br/>
-<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
-</div>
-</td>
-<td></td>
-<td>22</td>
-<td>com.sisense.about.NewsroomTest@be68757</td></tr>
-<tr>
-<td title='com.sisense.about.PartnersTest.verifyPrivacyPolicyPageTitleUnderFormSection()'><b>verifyPrivacyPolicyPageTitleUnderFormSection</b><br>Test class: com.sisense.about.PartnersTest<br/>
-<a href="#Output-785927145" onClick='toggleBox("Output-785927145", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-785927145" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-785927145">
-Open Browser</br><br/>
-Click on Accept Cookie button.</br><br/>
-Mouse hovered on About tab.</br><br/>
-Click on the Partners menu under the About tab successfully.</br><br/>
-Click on the Privacy Policy link under the form section.</br><br/>
-Privacy Policy page title matched successfully.</br><br/>
-<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
-</div>
-</td>
-<td></td>
-<td>28</td>
-<td>com.sisense.about.PartnersTest@1efe439d</td></tr>
-<tr>
-<td title='com.sisense.about.CompanyTest.verifyExplorecareersatSisensePageTitleUnderOurCultureAndCareersSection()'><b>verifyExplorecareersatSisensePageTitleUnderOurCultureAndCareersSection</b><br>Test class: com.sisense.about.CompanyTest<br/>
-<a href="#Output-1591492137" onClick='toggleBox("Output-1591492137", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1591492137" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1591492137">
-Open Browser</br><br/>
-Click on Accept Cookie button.</br><br/>
-Mouse hovered on About tab.</br><br/>
-Click on Company Menu under About tab successfully.</br><br/>
-Click on Explore Careers at Sisense button under Our Culture and Careers section successfully.</br><br/>
-Careers Page Title matched successfully.</br><br/>
-<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
-</div>
-</td>
-<td></td>
-<td>30</td>
-<td>com.sisense.about.CompanyTest@2e48362c</td></tr>
-<tr>
-<td title='com.sisense.about.PartnersTest.verifyHomeBreadcrumbTitleUnderPartnersPage()'><b>verifyHomeBreadcrumbTitleUnderPartnersPage</b><br>Test class: com.sisense.about.PartnersTest<br/>
-<a href="#Output-1161267215" onClick='toggleBox("Output-1161267215", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1161267215" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1161267215">
-Open Browser</br><br/>
-Click on Accept Cookie button.</br><br/>
-Mouse hovered on About tab.</br><br/>
-Click on the Partners menu under the About tab successfully.</br><br/>
-Click on Home breadcrumb.</br><br/>
-Sisense Home Page title matched successfully.</br><br/>
-<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
-</div>
-</td>
-<td></td>
-<td>22</td>
-<td>com.sisense.about.PartnersTest@1efe439d</td></tr>
-<tr>
-<td title='com.sisense.about.AboutTest.verifyDemoPageTitleUnderHeaderSection()'><b>verifyDemoPageTitleUnderHeaderSection</b><br>Test class: com.sisense.about.AboutTest<br/>
-<a href="#Output-1258010306" onClick='toggleBox("Output-1258010306", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1258010306" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1258010306">
-Open Browser</br><br/>
-Click on Accept Cookie button.</br><br/>
-Click on the About tab.</br><br/>
-Click on the Demo button.</br><br/>
-Page title: Request a Demo - See Sisense Transform Your Data Analytics</br><br/>
-Url : https://www.sisense.com/demo/</br><br/>
-Sisense Demo page title matched successfully.</br><br/>
-<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
-</div>
-</td>
-<td></td>
-<td>22</td>
-<td>com.sisense.about.AboutTest@3697186</td></tr>
-<tr>
-<td title='com.sisense.about.NewsroomTest.verifyPressReleasesPageTitleUnderNewsroomPage()'><b>verifyPressReleasesPageTitleUnderNewsroomPage</b><br>Test class: com.sisense.about.NewsroomTest<br/>
-<a href="#Output-391924453" onClick='toggleBox("Output-391924453", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-391924453" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-391924453">
-Open Browser</br><br/>
-Click on Accept Cookie button.</br><br/>
-Mouse hovered on About tab.</br><br/>
-Click on Newsroom menu successfully.</br><br/>
-Click on Press Releases link successfully.</br><br/>
-Sisense Newsroom Page Title matched successfully.</br><br/>
-<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
-</div>
-</td>
-<td></td>
-<td>26</td>
-<td>com.sisense.about.NewsroomTest@be68757</td></tr>
+<td>20</td>
+<td>com.sisense.about.NewsroomTest@740d2e78</td></tr>
 <tr>
 <td title='com.sisense.about.AboutTest.verifyAboutOurInvestorsPageTitleUnderOurInvestorsSection()'><b>verifyAboutOurInvestorsPageTitleUnderOurInvestorsSection</b><br>Test class: com.sisense.about.AboutTest<br/>
-<a href="#Output-1268237485" onClick='toggleBox("Output-1268237485", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-1947397483" onClick='toggleBox("Output-1947397483", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1268237485" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1268237485">
+<a href="#Output-1947397483" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1947397483">
 Open Browser</br><br/>
 Click on Accept Cookie button.</br><br/>
 Click on the About tab.</br><br/>
@@ -665,51 +736,14 @@ Sisense About Our Investors page title matched successfully.</br><br/>
 </div>
 </td>
 <td></td>
-<td>23</td>
-<td>com.sisense.about.AboutTest@3697186</td></tr>
-<tr>
-<td title='com.sisense.about.AboutTest.verifyBookaliveDemoPageTitleUnderFooterSection()'><b>verifyBookaliveDemoPageTitleUnderFooterSection</b><br>Test class: com.sisense.about.AboutTest<br/>
-<a href="#Output-1251133097" onClick='toggleBox("Output-1251133097", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1251133097" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1251133097">
-Open Browser</br><br/>
-Click on Accept Cookie button.</br><br/>
-Click on the About tab.</br><br/>
-Scroll to Footer section.</br><br/>
-Click on Book a Live Demo button under Footer successfully.</br><br/>
-Sisense Demo page title matched successfully.</br><br/>
-<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
-</div>
-</td>
-<td></td>
-<td>35</td>
-<td>com.sisense.about.AboutTest@3697186</td></tr>
-<tr>
-<td title='com.sisense.about.NewsroomTest.verifyBookaliveDemoPageTitleUnderFooterSection()'><b>verifyBookaliveDemoPageTitleUnderFooterSection</b><br>Test class: com.sisense.about.NewsroomTest<br/>
-<a href="#Output-1357064600" onClick='toggleBox("Output-1357064600", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1357064600" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1357064600">
-Open Browser</br><br/>
-Click on Accept Cookie button.</br><br/>
-Mouse hovered on About tab.</br><br/>
-Click on Newsroom menu successfully.</br><br/>
-Scroll to Footer section.</br><br/>
-Click on Book a Live Demo button under Footer successfully.</br><br/>
-Sisense Demo page title matched successfully.</br><br/>
-<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
-</div>
-</td>
-<td></td>
-<td>47</td>
-<td>com.sisense.about.NewsroomTest@be68757</td></tr>
+<td>21</td>
+<td>com.sisense.about.AboutTest@5460cf3a</td></tr>
 <tr>
 <td title='com.sisense.about.NewsroomTest.verifyDemoPageTitleUnderHeaderSection()'><b>verifyDemoPageTitleUnderHeaderSection</b><br>Test class: com.sisense.about.NewsroomTest<br/>
-<a href="#Output-1372745709" onClick='toggleBox("Output-1372745709", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-1929957683" onClick='toggleBox("Output-1929957683", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1372745709" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1372745709">
+<a href="#Output-1929957683" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1929957683">
 Open Browser</br><br/>
 Click on Accept Cookie button.</br><br/>
 Mouse hovered on About tab.</br><br/>
@@ -722,8 +756,28 @@ Sisense Demo page title matched successfully.</br><br/>
 </div>
 </td>
 <td></td>
-<td>27</td>
-<td>com.sisense.about.NewsroomTest@be68757</td></tr>
+<td>20</td>
+<td>com.sisense.about.NewsroomTest@740d2e78</td></tr>
+<tr>
+<td title='com.sisense.about.NewsroomTest.verifyPressReleasesBookaliveDemoPageTitleUnderFooterSection()'><b>verifyPressReleasesBookaliveDemoPageTitleUnderFooterSection</b><br>Test class: com.sisense.about.NewsroomTest<br/>
+<a href="#Output-50980980" onClick='toggleBox("Output-50980980", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-50980980" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-50980980">
+Open Browser</br><br/>
+Click on Accept Cookie button.</br><br/>
+Mouse hovered on About tab.</br><br/>
+Click on Newsroom menu successfully.</br><br/>
+Click on Press Releases link successfully.</br><br/>
+Scroll to Footer section.</br><br/>
+Click on Book a Live Demo button under Footer successfully.</br><br/>
+Sisense Demo page title matched successfully.</br><br/>
+<Strong><b>Sisense Testing is passed.</b></font></strong></br><br/>
+</div>
+</td>
+<td></td>
+<td>21</td>
+<td>com.sisense.about.NewsroomTest@740d2e78</td></tr>
 </table><p>
 </body>
 </html>

@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import LOGO_KIWIQA from "../Images/kiwiqa-logo.png";
 import LOGO_SISENSE from "../Images/Sisense-Logo.svg";
+import VIEW_ICON from "../Images/VIEW2.png";
+import DOWNLOAD_ICON from "../Images/DOWNLOAD3.png";
 
 const CSS = `
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Sora:wght@400;600;700&display=swap');
@@ -144,8 +146,8 @@ body{
 
 .btn-view{
     padding:7px 16px;
-    background:linear-gradient(135deg,#7CC242,#5a9e20);
-    border:none;
+    background:#fff;
+    border:1.5px solid #7CC242;
     border-radius:7px;
     color:#fff;
     font-size:12px;
@@ -198,213 +200,218 @@ body{
     opacity:.35;
     cursor:not-allowed
 }
+
+.action-icon{
+    width: 16px;
+    height: 16px
+}
 `;
 
-function ViewReports(){
+function ViewReports() {
 
-const [reports,setReports]=useState([]);
-const [loading,setLoading]=useState(true);
+    const [reports, setReports] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-const [currentPage,setCurrentPage]=useState(1);
-const reportsPerPage=5;
+    const [currentPage, setCurrentPage] = useState(1);
+    const reportsPerPage = 5;
 
-useEffect(()=>{
-fetch("http://localhost:8081/api/reports")
-.then(res=>res.json())
-.then(data=>{
-setReports(data);
-setLoading(false);
-})
-.catch(()=>setLoading(false))
-},[]);
+    useEffect(() => {
+        fetch("http://localhost:8081/api/reports")
+            .then(res => res.json())
+            .then(data => {
+                setReports(data);
+                setLoading(false);
+            })
+            .catch(() => setLoading(false))
+    }, []);
 
-/* PAGINATION LOGIC */
-const totalPages=Math.ceil(reports.length/reportsPerPage);
+    /* PAGINATION LOGIC */
+    const totalPages = Math.ceil(reports.length / reportsPerPage);
 
-const indexOfLast=currentPage*reportsPerPage;
-const indexOfFirst=indexOfLast-reportsPerPage;
+    const indexOfLast = currentPage * reportsPerPage;
+    const indexOfFirst = indexOfLast - reportsPerPage;
 
-const currentReports=reports.slice(indexOfFirst,indexOfLast);
+    const currentReports = reports.slice(indexOfFirst, indexOfLast);
 
-const changePage=(page)=>{
-if(page<1||page>totalPages) return;
-setCurrentPage(page);
-};
-
-const openReport=(fileName)=>{
-window.open(`http://localhost:8081/api/reports/view/${fileName}`,"_blank");
+    const changePage = (page) => {
+        if (page < 1 || page > totalPages) return;
+        setCurrentPage(page);
     };
 
-const downloadReport=(fileName)=>{
+    const openReport = (fileName) => {
+        window.open(`http://localhost:8081/api/reports/view/${fileName}`, "_blank");
+    };
 
-    const link=document.createElement("a");
+    const downloadReport = (fileName) => {
 
-    link.href=`http://localhost:8081/api/reports/download/${fileName}`;
-    link.setAttribute("download",fileName);
+        const link = document.createElement("a");
 
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+        link.href = `http://localhost:8081/api/reports/download/${fileName}`;
+        link.setAttribute("download", fileName);
 
-};
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
 
-return(
-    <>
-        <style>{CSS}</style>
+    };
 
-        <div className="reports-root">
+    return (
+        <>
+            <style>{CSS}</style>
 
-            <header className="dash-header">
-                <img src={LOGO_KIWIQA} alt="KiwiQA" className="kiwi-logo"/>
-                <div className="dash-title">Reports History</div>
-                <img src={LOGO_SISENSE} alt="Sisense" className="sisense-logo"/>
-            </header>
+            <div className="reports-root">
 
-            <main className="reports-body">
+                <header className="dash-header">
+                    <img src={LOGO_KIWIQA} alt="KiwiQA" className="kiwi-logo" />
+                    <div className="dash-title">Reports History</div>
+                    <img src={LOGO_SISENSE} alt="Sisense" className="sisense-logo" />
+                </header>
 
-                <button className="back-btn" onClick={()=>window.history.back()}>
-                    ← Back to Dashboard
-                </button>
+                <main className="reports-body">
 
-                <div className="reports-card">
+                    <button className="back-btn" onClick={() => window.history.back()}>
+                        ← Back to Dashboard
+                    </button>
 
-                    <div className="reports-card-header">
-                        <span className="reports-card-title">All Reports</span>
+                    <div className="reports-card">
 
-                        <span className="reports-count-badge">
-{loading ? "..." : `${reports.length} reports`}
-</span>
+                        <div className="reports-card-header">
+                            <span className="reports-card-title">All Reports</span>
+
+                            <span className="reports-count-badge">
+                                {loading ? "..." : `${reports.length} reports`}
+                            </span>
+                        </div>
+
+                        {loading && (
+                            <div style={{ padding: "40px", textAlign: "center" }}>
+                                Fetching reports...
+                            </div>
+                        )}
+
+                        {!loading && reports.length === 0 && (
+                            <div style={{ padding: "40px", textAlign: "center" }}>
+                                No reports available yet.
+                            </div>
+                        )}
+
+                        {!loading && reports.length > 0 && (
+                            <>
+
+                                <table className="reports-table">
+
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Report Name</th>
+                                            <th style={{ textAlign: "center" }}>Actions</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+
+                                        {currentReports.map((report, index) => (
+                                            <tr key={index}>
+
+                                                <td>{indexOfFirst + index + 1}</td>
+
+                                                <td className="report-name">
+                                                    {report}
+                                                </td>
+
+                                                <td>
+
+                                                    <div className="action-buttons">
+
+                                                        <button
+                                                            className="btn-view"
+                                                            onClick={() => openReport(report)}
+                                                        >
+                                                            <img src={VIEW_ICON} alt="View" className="action-icon"/>
+                                                        </button>
+
+                                                        <button
+                                                            className="btn-download"
+                                                            onClick={() => downloadReport(report)}
+                                                        >
+                                                            <img src={DOWNLOAD_ICON} alt="Download" className="action-icon"/>
+                                                        </button>
+
+                                                    </div>
+
+                                                </td>
+
+                                            </tr>
+                                        ))}
+
+                                    </tbody>
+
+                                </table>
+
+                                {/* PAGINATION */}
+
+                                <div className="pagination">
+
+                                    <button
+                                        className="page-btn"
+                                        onClick={() => changePage(1)}
+                                        disabled={currentPage === 1}
+                                    >
+                                        &laquo;
+                                    </button>
+
+                                    <button
+                                        className="page-btn"
+                                        onClick={() => changePage(currentPage - 1)}
+                                        disabled={currentPage === 1}
+                                    >
+                                        &lsaquo;
+                                    </button>
+
+                                    {[...Array(totalPages)].map((_, i) => {
+
+                                        const page = i + 1;
+
+                                        return (
+                                            <button
+                                                key={page}
+                                                className={`page-btn ${currentPage === page ? "active" : ""}`}
+                                                onClick={() => changePage(page)}
+                                            >
+                                                {page}
+                                            </button>
+                                        );
+
+                                    })}
+
+                                    <button
+                                        className="page-btn"
+                                        onClick={() => changePage(currentPage + 1)}
+                                        disabled={currentPage === totalPages}
+                                    >
+                                        &rsaquo;
+                                    </button>
+
+                                    <button
+                                        className="page-btn"
+                                        onClick={() => changePage(totalPages)}
+                                        disabled={currentPage === totalPages}
+                                    >
+                                        &raquo;
+                                    </button>
+
+                                </div>
+
+                            </>
+                        )}
+
                     </div>
 
-                    {loading && (
-                        <div style={{padding:"40px",textAlign:"center"}}>
-                            Fetching reports...
-                        </div>
-                    )}
+                </main>
 
-                    {!loading && reports.length===0 && (
-                        <div style={{padding:"40px",textAlign:"center"}}>
-                            No reports available yet.
-                        </div>
-                    )}
-
-                    {!loading && reports.length>0 && (
-                        <>
-
-                            <table className="reports-table">
-
-                                <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Report Name</th>
-                                    <th style={{ textAlign: "center" }}>Actions</th>
-                                </tr>
-                                </thead>
-
-                                <tbody>
-
-                                {currentReports.map((report,index)=>(
-                                    <tr key={index}>
-
-                                        <td>{indexOfFirst+index+1}</td>
-
-                                        <td className="report-name">
-                                            {report}
-                                        </td>
-
-                                        <td>
-
-                                            <div className="action-buttons">
-
-                                                <button
-                                                    className="btn-view"
-                                                    onClick={()=>openReport(report)}
-                                                >
-                                                    View
-                                                </button>
-
-                                                <button
-                                                    className="btn-download"
-                                                    onClick={()=>downloadReport(report)}
-                                                >
-                                                    Download
-                                                </button>
-
-                                            </div>
-
-                                        </td>
-
-                                    </tr>
-                                ))}
-
-                                </tbody>
-
-                            </table>
-
-                            {/* PAGINATION */}
-
-                            <div className="pagination">
-
-                                <button
-                                    className="page-btn"
-                                    onClick={()=>changePage(1)}
-                                    disabled={currentPage===1}
-                                >
-                                    &laquo;
-                                </button>
-
-                                <button
-                                    className="page-btn"
-                                    onClick={()=>changePage(currentPage-1)}
-                                    disabled={currentPage===1}
-                                >
-                                    &lsaquo;
-                                </button>
-
-                                {[...Array(totalPages)].map((_,i)=>{
-
-                                    const page=i+1;
-
-                                    return(
-                                        <button
-                                            key={page}
-                                            className={`page-btn ${currentPage===page?"active":""}`}
-                                            onClick={()=>changePage(page)}
-                                        >
-                                            {page}
-                                        </button>
-                                    );
-
-                                })}
-
-                                <button
-                                    className="page-btn"
-                                    onClick={()=>changePage(currentPage+1)}
-                                    disabled={currentPage===totalPages}
-                                >
-                                    &rsaquo;
-                                </button>
-
-                                <button
-                                    className="page-btn"
-                                    onClick={()=>changePage(totalPages)}
-                                    disabled={currentPage===totalPages}
-                                >
-                                    &raquo;
-                                </button>
-
-                            </div>
-
-                        </>
-                    )}
-
-                </div>
-
-            </main>
-
-        </div>
-    </>
-);
+            </div>
+        </>
+    );
 }
 
 export default ViewReports;

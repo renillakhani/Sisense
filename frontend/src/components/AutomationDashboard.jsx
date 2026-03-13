@@ -371,10 +371,38 @@ export default function AutomationDashboard({
   const [showConfirm, setShowConfirm] = useState(false);
   const logRef = useRef(null);
 
-  useEffect(() => {
-    if (logRef.current) logRef.current.scrollTop = logRef.current.scrollHeight;
-  }, [logs]);
+useEffect(() => {
+  if (logRef.current) {
+    logRef.current.scrollTop = logRef.current.scrollHeight;
+  }
+}, [logs]);
 
+// // ask notification permission once
+// useEffect(() => {
+//   if ("Notification" in window && Notification.permission === "default") {
+//     Notification.requestPermission();
+//   }
+// }, []);
+
+// // track previous loading state
+// const prevLoading = useRef(false);
+
+// // notify when execution finishes
+// useEffect(() => {
+//   if (prevLoading.current && !loading && reportReady) {
+
+//     if (Notification.permission === "granted") {
+//       new Notification("Automation Execution Completed", {
+//         body: `${file} finished on ${browser} in ${execMode} mode.`,
+//         icon: LOGO_KIWIQA
+//       });
+//     }
+
+//   }
+
+//   prevLoading.current = loading;
+
+// }, [loading, reportReady, file, browser, execMode]);
   return (
     <>
       <style>{CSS}</style>
@@ -441,7 +469,7 @@ export default function AutomationDashboard({
                       onChange={() => setExecMode(m)}
                     />
 
-                    
+
                     {m}
                   </label>
                 ))}

@@ -135,9 +135,10 @@ const CSS = `
     display: flex;
     align-items: center;
     gap: 6px;
-    padding: 8px 16px;
+    padding: 10px 14px;
     border-radius: 8px;
     border: 1.5px solid #c8e0c8;
+    justify-content: center;
     background: #f4faf4;
     cursor: pointer;
     font-size: 13px;
@@ -173,7 +174,7 @@ const CSS = `
     font-size: 15px;
     font-weight: 700;
     letter-spacing: 0.5px;
-    padding: 8px;
+    padding: 10px;
     width: 100%;
     cursor: pointer;
     transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
@@ -328,7 +329,7 @@ const CSS = `
 
 /* Cancel button */
 .confirm-cancel {
-  padding: 7px 18px;
+  padding: 10px 14px;
   border: 1.5px solid #c8e0c8;
   border-radius: 8px;
   background: #fff;
@@ -401,7 +402,7 @@ export default function AutomationDashboard({
               </select>
             </div>
 
-            <div className="field-group full-width">
+            <div className="field-group">
               <label className="field-label">Browser</label>
               <div className="radio-row">
                 {[
@@ -422,26 +423,44 @@ export default function AutomationDashboard({
                       alt={b.name}
                       style={{ width: "16px", height: "16px", objectFit: "contain" }}
                     />
-                    {b.name}
                   </label>
                 ))}
               </div>
             </div>
 
-              <button
-                  className={`execute-btn ${loading ? "running" : ""}`}
-                  onClick={() => {
+            <div className="field-group">
+              <label className="field-label">Execution Mode</label>
 
-                      if (!file) {
-                          alert("⚠️ Please select a Test Suite before executing.");
-                          return;
-                      }
+              <div className="radio-row">
+                {["Headless", "Headed"].map(m => (
+                  <label key={m} className={`radio-chip ${execMode === m ? "active" : ""}`}>
+                    <input
+                      type="radio"
+                      value={m}
+                      checked={execMode === m}
+                      onChange={() => setExecMode(m)}
+                    />
 
-                      setShowConfirm(true);
+                    
+                    {m}
+                  </label>
+                ))}
+              </div>
+            </div>
+            <button
+              className={`execute-btn ${loading ? "running" : ""}`}
+              onClick={() => {
 
-                  }}
-                  disabled={loading}
-              >
+                if (!file) {
+                  alert("⚠️ Please select a Test Suite before executing.");
+                  return;
+                }
+
+                setShowConfirm(true);
+
+              }}
+              disabled={loading}
+            >
               {loading ? "⏳  Running..." : "▶  Execute"}
             </button>
 
@@ -486,7 +505,7 @@ export default function AutomationDashboard({
                 }}
                 style={{
                   flex: 1,
-                  padding: "8px",
+                  padding: "10px",
                   background: "#fff",
                   border: "1.5px solid #7CC242",
                   borderRadius: "8px",
@@ -509,7 +528,7 @@ export default function AutomationDashboard({
                 to="/reports"
                 style={{
                   flex: 1,
-                  padding: "8px",
+                  padding: "10px",
                   background: "#fff",
                   border: "1.5px solid #7CC242",
                   borderRadius: "8px",
@@ -532,7 +551,7 @@ export default function AutomationDashboard({
                 onClick={() => setShowLogs(!showLogs)}
                 style={{
                   flex: 1,
-                  padding: "8px",
+                  padding: "10px",
                   background: "#fff",
                   border: "1.5px solid #7CC242",
                   borderRadius: "8px",

@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from "react";
 import LOGO_KIWIQA from "../Images/kiwiqa-logo.png";
 import LOGO_SISENSE from "../Images/Sisense-Logo.svg";
-import VIEW_ICON from "../Images/VIEW2.png";
-import DOWNLOAD_ICON from "../Images/DOWNLOAD3.png";
+import VIEW_ICON from "../Images/VIEW.png";
+import DOWNLOAD_ICON from "../Images/DOWNLOAD.png";
 
 const CSS = `
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Sora:wght@400;600;700&display=swap');

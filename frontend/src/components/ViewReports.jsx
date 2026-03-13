@@ -321,7 +321,7 @@ function ViewReports() {
 
                                                 <td>
 
-                                                    <div className="action-buttons">
+                                                    <div className="action-buttons" title="View Report">
 
                                                         <button
                                                             className="btn-view"
@@ -331,7 +331,7 @@ function ViewReports() {
                                                         </button>
 
                                                         <button
-                                                            className="btn-download"
+                                                            className="btn-download" title="Download Report"
                                                             onClick={() => downloadReport(report)}
                                                         >
                                                             <img src={DOWNLOAD_ICON} alt="Download" className="action-icon"/>
@@ -350,9 +350,9 @@ function ViewReports() {
 
                                 {/* PAGINATION */}
 
-                                <div className="pagination">
+                                <div className="pagination" >
 
-                                    <button
+                                    <button title="Jump to 1st page"
                                         className="page-btn"
                                         onClick={() => changePage(1)}
                                         disabled={currentPage === 1}
@@ -360,7 +360,7 @@ function ViewReports() {
                                         &laquo;
                                     </button>
 
-                                    <button
+                                    <button title="Jump to Previous page"
                                         className="page-btn"
                                         onClick={() => changePage(currentPage - 1)}
                                         disabled={currentPage === 1}
@@ -384,7 +384,7 @@ function ViewReports() {
 
                                     })}
 
-                                    <button
+                                    <button title="Jump to next page"
                                         className="page-btn"
                                         onClick={() => changePage(currentPage + 1)}
                                         disabled={currentPage === totalPages}
@@ -392,7 +392,7 @@ function ViewReports() {
                                         &rsaquo;
                                     </button>
 
-                                    <button
+                                    <button title="Jump to last page"
                                         className="page-btn"
                                         onClick={() => changePage(totalPages)}
                                         disabled={currentPage === totalPages}

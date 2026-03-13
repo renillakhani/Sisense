@@ -377,32 +377,6 @@ useEffect(() => {
   }
 }, [logs]);
 
-// // ask notification permission once
-// useEffect(() => {
-//   if ("Notification" in window && Notification.permission === "default") {
-//     Notification.requestPermission();
-//   }
-// }, []);
-
-// // track previous loading state
-// const prevLoading = useRef(false);
-
-// // notify when execution finishes
-// useEffect(() => {
-//   if (prevLoading.current && !loading && reportReady) {
-
-//     if (Notification.permission === "granted") {
-//       new Notification("Automation Execution Completed", {
-//         body: `${file} finished on ${browser} in ${execMode} mode.`,
-//         icon: LOGO_KIWIQA
-//       });
-//     }
-
-//   }
-
-//   prevLoading.current = loading;
-
-// }, [loading, reportReady, file, browser, execMode]);
   return (
     <>
       <style>{CSS}</style>
@@ -494,9 +468,8 @@ useEffect(() => {
 
             {/* Progress bar */}
             {loading && (
-              <div className="field-group full-width" style={{ marginTop: "12px" }}>
-                <div style={{ display: "flex", justifyContent: "space-between", marginTop: "6px", fontFamily: "'JetBrains Mono',monospace", fontSize: "11px", color: "#5a8a5a" }}>
-
+              <div className="field-group full-width">
+                <div style={{ display: "flex", justifyContent: "space-between", fontFamily: "'JetBrains Mono',monospace", fontSize: "11px", color: "#5a8a5a" }}>
                   <span>Execution in Process...</span>
 
                 </div>

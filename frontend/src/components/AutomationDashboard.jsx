@@ -347,6 +347,7 @@ const CSS = `
   font-weight: 700;
   cursor: pointer;
 }
+
 `;
 
 export default function AutomationDashboard({
@@ -377,6 +378,7 @@ useEffect(() => {
   }
 }, [logs]);
 
+
   return (
     <>
       <style>{CSS}</style>
@@ -389,7 +391,7 @@ useEffect(() => {
 
         <main className="dash-body">
           <div className="controls-card">
-            <div className="field-group" title="Select the environment where the automation tests will be executed."> 
+            <div className="field-group" title="Select the environment where the automation tests will be executed.">
               <label className="field-label">Environment</label>
               <select className="dash-select" value={env} onChange={e => setEnv(e.target.value)}>
                 {["QA", "Staging", "Production", "Dev"].map(e => <option key={e}>{e}</option>)}

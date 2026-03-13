@@ -136,7 +136,7 @@ public class CustomReporterBuildSummary implements IReporter {
 
 	private void testCaseNo() {
 		m_out.println(
-				"<table width='350px' height='30px' border='1' align='left'><tbody><tr colspan='2'><td bgcolor='#0088cc' colspan='2'><h3><center><font color='white'>Build Summary</font></center></h3></td></tr><tr><td><b>"
+				"<table width='350px' height='30px' border='1' align='left'><tbody><tr colspan='2'><td bgcolor='#7CC242' colspan='2'><h3><center><font color='white'>Build Summary</font></center></h3></td></tr><tr><td><b>"
 						+ "Passed Test cases</b>   </td> <td> <center><b>" + passed
 						+ "</b></center></td></tr><tr><td><b> Failed Test Cases </b></td><td> <center><b>" + failedcount
 						+ "</b></center></td></tr><tr><td><b>Skipped Test cases</b></td><td><center><b> " + skipped

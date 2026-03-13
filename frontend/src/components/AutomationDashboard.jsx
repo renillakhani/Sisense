@@ -415,14 +415,14 @@ useEffect(() => {
 
         <main className="dash-body">
           <div className="controls-card">
-            <div className="field-group">
+            <div className="field-group" title="Select the environment where the automation tests will be executed."> 
               <label className="field-label">Environment</label>
               <select className="dash-select" value={env} onChange={e => setEnv(e.target.value)}>
                 {["QA", "Staging", "Production", "Dev"].map(e => <option key={e}>{e}</option>)}
               </select>
             </div>
 
-            <div className="field-group">
+            <div className="field-group" title="Select the test suite you want to execute.">
               <label className="field-label">Test Suite</label>
               <select className="dash-select" value={file} onChange={e => setFile(e.target.value)}>
                 <option value="" disabled={true}>Select Test Suite</option>
@@ -430,7 +430,7 @@ useEffect(() => {
               </select>
             </div>
 
-            <div className="field-group">
+            <div className="field-group" title="Choose the browser where the automation tests will run.">
               <label className="field-label">Browser</label>
               <div className="radio-row">
                 {[
@@ -456,7 +456,7 @@ useEffect(() => {
               </div>
             </div>
 
-            <div className="field-group">
+            <div className="field-group" title="Headless runs without opening a browser window. Headed runs with visible browser UI.">
               <label className="field-label">Execution Mode</label>
 
               <div className="radio-row">
@@ -489,7 +489,7 @@ useEffect(() => {
               }}
               disabled={loading}
             >
-              {loading ? "⏳  Running..." : "▶  Execute"}
+              {loading ? "Executing...." : "Execute"}
             </button>
 
             {/* Progress bar */}
@@ -512,10 +512,10 @@ useEffect(() => {
             )}
 
             {/* Report section */}
-            <div className="report-row" style={{ display: "flex", gap: "10px" }}>
+            <div className="report-row" style={{ display: "flex", gap: "10px" }} >
 
               {/* View Report */}
-              <button
+              <button title="View Current Execution report in detail."
                 onClick={() => {
 
                   if (loading) {
@@ -552,7 +552,7 @@ useEffect(() => {
               </button>
 
               {/* View Reports History */}
-              <Link
+              <Link title="View all previous Execution reports in detail."
                 to="/reports"
                 style={{
                   flex: 1,
@@ -575,7 +575,7 @@ useEffect(() => {
               </Link>
 
               {/* View Execution Logs */}
-              <button
+              <button title="View Execution logs in detail."
                 onClick={() => setShowLogs(!showLogs)}
                 style={{
                   flex: 1,
@@ -622,9 +622,10 @@ useEffect(() => {
           )}
 
           <div className="status-bar">
-            <div className="status-pill">env <span>{env}</span></div>
-            <div className="status-pill">browser <span>{browser}</span></div>
-            <div className="status-pill">mode <span>{execMode}</span></div>
+            <div className="status-pill">Env <span>{env}</span></div>
+            <div className="status-pill">Suits <span>{file}</span></div>
+            <div className="status-pill">Browser <span>{browser}</span></div>
+            <div className="status-pill">Mode <span>{execMode}</span></div>
           </div>
         </main>
         {showConfirm && (
@@ -637,7 +638,7 @@ useEffect(() => {
               </div>
 
               <div className="confirm-text">
-                Are you sure you want to execute this test suite?
+                Are you sure you want to execute <strong>{file}</strong> in <strong>{browser}</strong> browser and <strong>{env}</strong> environment with <strong>{execMode}</strong> mode?
               </div>
 
               <div className="confirm-actions">

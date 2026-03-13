@@ -37,7 +37,7 @@ public class ExtentReport {
 			extent = new ExtentReports();
 			ExtentSparkReporter spark = new ExtentSparkReporter("Sisense Automation Report.html");
 			extent.attachReporter(spark);
-			spark.config().setTheme(Theme.DARK);
+			spark.config().setTheme(Theme.STANDARD);
 			spark.config().setDocumentTitle("Sisense Report ");
 			spark.config().setReportName("Functional");
 			spark.config().thumbnailForBase64(true);

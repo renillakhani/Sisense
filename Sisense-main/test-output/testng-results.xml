@@ -20,16 +20,16 @@
       <![CDATA[<Strong><b>Sisense Testing is passed.</b></font></strong></br>]]>
     </line>
   </reporter-output>
-  <suite started-at="2026-03-13T10:45:04 IST" name="Current Pages" finished-at="2026-03-13T10:45:37 IST" duration-ms="32343">
+  <suite started-at="2026-03-13T12:03:09 IST" name="Current Pages" finished-at="2026-03-13T12:03:45 IST" duration-ms="36032">
     <groups>
     </groups>
-    <test started-at="2026-03-13T10:45:04 IST" name="Sisense Testing" finished-at="2026-03-13T10:45:37 IST" duration-ms="32343">
+    <test started-at="2026-03-13T12:03:09 IST" name="Sisense Testing" finished-at="2026-03-13T12:03:45 IST" duration-ms="36032">
       <class name="com.sisense.footer.SisenseFooterTest">
-        <test-method is-config="true" signature="fetchSuiteConfiguration()[pri:0, instance:com.sisense.footer.SisenseFooterTest@53941c2f]" started-at="2026-03-13T10:45:04 IST" name="fetchSuiteConfiguration" finished-at="2026-03-13T10:45:04 IST" duration-ms="8" status="PASS">
+        <test-method is-config="true" signature="fetchSuiteConfiguration()[pri:0, instance:com.sisense.footer.SisenseFooterTest@53941c2f]" started-at="2026-03-13T12:03:09 IST" name="fetchSuiteConfiguration" finished-at="2026-03-13T12:03:09 IST" duration-ms="9" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fetchSuiteConfiguration -->
-        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:com.sisense.footer.SisenseFooterTest@53941c2f]" started-at="2026-03-13T10:45:04 IST" name="setUp" finished-at="2026-03-13T10:45:08 IST" duration-ms="3399" status="PASS">
+        <test-method is-config="true" signature="setUp(org.testng.ITestContext)[pri:0, instance:com.sisense.footer.SisenseFooterTest@53941c2f]" started-at="2026-03-13T12:03:09 IST" name="setUp" finished-at="2026-03-13T12:03:13 IST" duration-ms="4058" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -40,7 +40,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifySupportPortalPageTitleUnderFooter()[pri:0, instance:com.sisense.footer.SisenseFooterTest@53941c2f]" started-at="2026-03-13T10:45:08 IST" name="verifySupportPortalPageTitleUnderFooter" finished-at="2026-03-13T10:45:36 IST" duration-ms="28733" status="PASS">
+        <test-method signature="verifySupportPortalPageTitleUnderFooter()[pri:0, instance:com.sisense.footer.SisenseFooterTest@53941c2f]" started-at="2026-03-13T12:03:13 IST" name="verifySupportPortalPageTitleUnderFooter" finished-at="2026-03-13T12:03:45 IST" duration-ms="31720" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Open Browser</br>]]>
@@ -62,7 +62,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- verifySupportPortalPageTitleUnderFooter -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult,org.testng.ITestContext)[pri:0, instance:com.sisense.footer.SisenseFooterTest@53941c2f]" started-at="2026-03-13T10:45:36 IST" name="tearDown" finished-at="2026-03-13T10:45:37 IST" duration-ms="178" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult,org.testng.ITestContext)[pri:0, instance:com.sisense.footer.SisenseFooterTest@53941c2f]" started-at="2026-03-13T12:03:45 IST" name="tearDown" finished-at="2026-03-13T12:03:45 IST" duration-ms="219" status="PASS">
           <params>
             <param index="0">
               <value>

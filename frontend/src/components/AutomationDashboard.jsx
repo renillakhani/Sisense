@@ -347,6 +347,7 @@ const CSS = `
   font-weight: 700;
   cursor: pointer;
 }
+
 `;
 
 export default function AutomationDashboard({
@@ -377,32 +378,7 @@ useEffect(() => {
   }
 }, [logs]);
 
-// // ask notification permission once
-// useEffect(() => {
-//   if ("Notification" in window && Notification.permission === "default") {
-//     Notification.requestPermission();
-//   }
-// }, []);
 
-// // track previous loading state
-// const prevLoading = useRef(false);
-
-// // notify when execution finishes
-// useEffect(() => {
-//   if (prevLoading.current && !loading && reportReady) {
-
-//     if (Notification.permission === "granted") {
-//       new Notification("Automation Execution Completed", {
-//         body: `${file} finished on ${browser} in ${execMode} mode.`,
-//         icon: LOGO_KIWIQA
-//       });
-//     }
-
-//   }
-
-//   prevLoading.current = loading;
-
-// }, [loading, reportReady, file, browser, execMode]);
   return (
     <>
       <style>{CSS}</style>
@@ -415,7 +391,7 @@ useEffect(() => {
 
         <main className="dash-body">
           <div className="controls-card">
-            <div className="field-group" title="Select the environment where the automation tests will be executed."> 
+            <div className="field-group" title="Select the environment where the automation tests will be executed.">
               <label className="field-label">Environment</label>
               <select className="dash-select" value={env} onChange={e => setEnv(e.target.value)}>
                 {["QA", "Staging", "Production", "Dev"].map(e => <option key={e}>{e}</option>)}
